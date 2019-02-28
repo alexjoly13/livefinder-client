@@ -15,6 +15,6 @@ function errorHandler(err) {
   throw err;
 }
 
-export function signUpSpotify(userSubmission) {
-  return backendApi.get("/auth/spotify", userSubmission).catch(errorHandler);
+export function getLogOut() {
+  return backendApi.get("/logout").catch(errorHandler);
 }
