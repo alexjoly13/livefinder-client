@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { getTopArtist } from "../api.js";
 
-import axios from "axios";
+// import axios from "axios";
 
 class TopArtists extends Component {
   constructor(props) {
@@ -13,11 +13,13 @@ class TopArtists extends Component {
   }
 
   componentDidMount() {
+    console.log("it words");
+
     getTopArtist()
       // get data from our EXPRESS API
       .then(response => {
         console.log("user top artists: ", response.data);
-        this.setState({ topArtists: response.data.items });
+        this.setState({ topArtists: response.data.tempArray });
       });
   }
 
@@ -34,7 +36,7 @@ class TopArtists extends Component {
         <ul>
           {topArtists.map(oneTopArtist => {
             return (
-              <li>
+              <li key={oneTopArtist.id}>
                 <h3>name: {oneTopArtist.name}</h3>
                 <p>{oneTopArtist.popularity}</p>
                 <img src={oneTopArtist.images[1].url} alt="img" />

@@ -20,5 +20,7 @@ export function getLogOut() {
 }
 
 export function getTopArtist() {
+  console.log("called");
+
   return backendApi.get("/userInfo").catch(errorHandler);
 }
