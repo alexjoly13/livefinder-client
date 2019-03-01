@@ -24,8 +24,8 @@ class TopArtists extends Component {
   }
 
   render() {
-    const { topArtists } = this.state;
-    console.log("hello top artist weshhhhhh", topArtists);
+    const { tempArray } = this.state;
+    console.log("hello top artist weshhhhhh", tempArray);
     return (
       <section className="TopArtists">
         {/* <h2>Top Artists</h2> */}
@@ -33,7 +33,7 @@ class TopArtists extends Component {
           Search Top Artists
         </button> */}
 
-        <ul>
+        {/* <ul>
           {topArtists.map(oneTopArtist => {
             return (
               <li key={oneTopArtist.id}>
@@ -43,7 +43,7 @@ class TopArtists extends Component {
               </li>
             );
           })}
-        </ul>
+        </ul> */}
       </section>
     );
   }
