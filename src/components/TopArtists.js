@@ -19,13 +19,15 @@ class TopArtists extends Component {
       // get data from our EXPRESS API
       .then(response => {
         console.log("user top artists: ", response.data);
-        this.setState({ topArtists: response.data.tempArray });
+        this.setState({
+          topArtists: response.data
+        });
       });
   }
 
   render() {
-    const { tempArray } = this.state;
-    console.log("hello top artist weshhhhhh", tempArray);
+    const { topArtists } = this.state;
+    console.log("hello top artist weshhhhhh", topArtists);
     return (
       <section className="TopArtists">
         {/* <h2>Top Artists</h2> */}
@@ -33,17 +35,19 @@ class TopArtists extends Component {
           Search Top Artists
         </button> */}
 
-        {/* <ul>
-          {topArtists.map(oneTopArtist => {
+        <ul>
+          {topArtists.map(oneArtist => {
             return (
-              <li key={oneTopArtist.id}>
-                <h3>name: {oneTopArtist.name}</h3>
-                <p>{oneTopArtist.popularity}</p>
-                <img src={oneTopArtist.images[1].url} alt="img" />
+              <li>
+                {oneArtist.resultsPage.results.event.map(oneEvent => {
+                  return <h3>{oneEvent.displayName}</h3>;
+                })}
+                {/* <p>{oneArtist.popularity}</p>
+                <img src={oneArtist.images[1].url} alt="img" /> */}
               </li>
             );
           })}
-        </ul> */}
+        </ul>
       </section>
     );
   }
