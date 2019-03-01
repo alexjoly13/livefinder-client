@@ -8,7 +8,7 @@ class HomePage extends Component {
   }
   render() {
     return (
-      <section className="HomePage">
+      <section>
         <a href="http://localhost:8888/auth/spotify">
           <img
             className="logo-spotify"

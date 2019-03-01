@@ -4,6 +4,7 @@ import "./App.css";
 import HomePage from "./components/HomePage.js";
 import NotFound from "./components/NotFound.js";
 import Connected from "./components/connected";
+import { getLogOut } from "./api.js";
 
 class App extends Component {
   constructor(props) {
@@ -28,8 +29,14 @@ class App extends Component {
   }
 
   render() {
+    const { currentUser } = this.state;
     return (
       <div className="App">
+        <header className="Header">
+          <nav>
+            <NavLink to="/">Home Page</NavLink>
+          </nav>
+        </header>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route
@@ -44,7 +51,7 @@ class App extends Component {
                 />
               );
             }}
-          />{" "}
+          />
           <Route component={NotFound} />
         </Switch>
       </div>
