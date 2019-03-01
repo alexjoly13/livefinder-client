@@ -47,8 +47,7 @@ class TopArtists extends Component {
               </li>
             );
           })}
-        </ul>{" "}
-        */}
+        </ul>
       </section>
     );
   }
