@@ -28,15 +28,6 @@ class App extends Component {
     this.setState({ currentUser: userInfo });
   }
 
-  logoutClick() {
-    getLogOut().then(response => {
-      console.log("LOGGED OUT");
-      console.log(this.state.currentUser);
-
-      this.updateUser(null);
-    });
-  }
-
   render() {
     const { currentUser } = this.state;
     return (
@@ -58,9 +49,6 @@ class App extends Component {
           />{" "}
           <Route component={NotFound} />
         </Switch>
-        <NavLink to="/">
-          <button onClick={() => this.logoutClick()}>Log Out</button>
-        </NavLink>
       </div>
     );
   }

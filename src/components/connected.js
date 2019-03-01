@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { Switch, Route, NavLink } from "react-router-dom";
 import "./connected.css";
 import axios from "axios";
+import { getLogOut } from "../api.js";
 
 class Connected extends Component {
   constructor(props) {
@@ -25,11 +27,14 @@ class Connected extends Component {
     }
   }
 
-  // getArtist() {
-  //   const { artistArray } = this.state;
-  //   axios.get("https://api.spotify.com/v1/me/top/{artists}");
-  //   this.setState({ topArtist: artistArray });
-  // }
+  logoutClick() {
+    getLogOut().then(response => {
+      console.log("LOGGED OUT");
+      console.log(this.state.currentUser);
+
+      this.props.loggedIn(null);
+    });
+  }
 
   render() {
     const { currentUser } = this.props;
@@ -51,6 +56,9 @@ class Connected extends Component {
             </ul>
           </div>
         )}
+        <NavLink to="/">
+          <button onClick={() => this.logoutClick()}>Log Out</button>
+        </NavLink>
       </section>
     );
   }
