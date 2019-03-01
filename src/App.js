@@ -30,6 +30,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <header className="Header">
+          <nav>
+            <NavLink to="/">Home Page</NavLink>
+          </nav>
+        </header>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route
@@ -44,7 +49,7 @@ class App extends Component {
                 />
               );
             }}
-          />{" "}
+          />
           <Route component={NotFound} />
         </Switch>
       </div>

@@ -18,3 +18,7 @@ function errorHandler(err) {
 export function signUpSpotify(userSubmission) {
   return backendApi.get("/auth/spotify", userSubmission).catch(errorHandler);
 }
+
+export function getTopArtist() {
+  return backendApi.get("/userInfo").catch(errorHandler);
+}

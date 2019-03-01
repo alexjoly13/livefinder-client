@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import TopArtists from "./TopArtists";
 
 class Connected extends Component {
   constructor(props) {
@@ -23,9 +24,15 @@ class Connected extends Component {
   }
 
   render() {
+    if (!this.props.currentUser) {
+      return <p>Loading...</p>;
+    }
     return (
       <section>
-        <p>Connected</p>
+        {/* <img src={this.props.currentUser.} /> */}
+        <h2>{this.props.currentUser.fullName}</h2>
+
+        <TopArtists />
       </section>
     );
   }
