@@ -6,18 +6,18 @@ class TopFrenchPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      topFrenchArtists: [],
-      FrenchArtistsConcert: []
+      topFrenchArtists: []
     };
   }
 
   componentDidMount() {
+    const { topFrenchArtists } = this.state;
     getTopFrench()
       // get data from our EXPRESS API
       .then(response => {
         console.log("French top artists: ", response.data);
         this.setState({
-          topFrenchArtists: response.data.albums.items
+          topFrenchArtists: response.data
         });
       });
   }
@@ -27,14 +27,24 @@ class TopFrenchPage extends Component {
       <section>
         <h2>Connected, check console</h2>
         <ul>
-          {topFrenchArtists.map(oneFrenchArtist => {
+          {topFrenchArtists.map(oneArtist => {
             return (
               <li>
-                <h3>{oneFrenchArtist.artists[0].name}</h3>
+                {oneArtist.resultsPage.results.event.map(oneEvent => {
+                  return (
+                    <div>
+                      <h3>{oneEvent.displayName}</h3>
+                      <p>{oneEvent.type}</p>
+                      <p>{oneEvent.venue.displayName}</p>
+                    </div>
+                  );
+                })}
+                {/* <p>{oneArtist.popularity}</p>
+                <img src={oneArtist.images[1].url} alt="img" /> */}
               </li>
             );
           })}
-        </ul>
+        </ul>{" "}
       </section>
     );
   }
