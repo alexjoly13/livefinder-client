@@ -13,15 +13,13 @@ class TopArtists extends Component {
   }
 
   componentDidMount() {
-    console.log("it words");
-
+    // console.log("it works");
+    const { topArtists } = this.state;
     getTopArtist()
       // get data from our EXPRESS API
       .then(response => {
-        console.log("user top artists: ", response.data);
-        this.setState({
-          topArtists: response.data
-        });
+        this.setState({ topArtists: response.data });
+        console.log("user top artists: ", topArtists);
       });
   }
 
@@ -30,20 +28,20 @@ class TopArtists extends Component {
     console.log("hello top artist weshhhhhh", topArtists);
     return (
       <section className="TopArtists">
-        {/* <h2>Top Artists</h2> */}
-        {/* <button onClick={event => this.userTopArtists(event)}>
-          Search Top Artists
-        </button> */}
-
+        <h2>Your next recommended concerts</h2>
         <ul>
           {topArtists.map(oneArtist => {
             return (
               <li>
                 {oneArtist.resultsPage.results.event.map(oneEvent => {
-                  return <h3>{oneEvent.displayName}</h3>;
+                  return (
+                    <div>
+                      <h3>{oneEvent.displayName}</h3>
+                      <p>{oneEvent.type}</p>
+                      <p>{oneEvent.venue.displayName}</p>
+                    </div>
+                  );
                 })}
-                {/* <p>{oneArtist.popularity}</p>
-                <img src={oneArtist.images[1].url} alt="img" /> */}
               </li>
             );
           })}

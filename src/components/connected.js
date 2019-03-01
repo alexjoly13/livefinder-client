@@ -9,7 +9,9 @@ class Connected extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      topArtist: []
+      topArtists: [],
+      topArtistName: [],
+      concertArray: []
     };
   }
 
