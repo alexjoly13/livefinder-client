@@ -22,3 +22,7 @@ export function getLogOut() {
 export function getTopArtist() {
   return backendApi.get("/userInfo").catch(errorHandler);
 }
+
+export function getTopFrench() {
+  return backendApi.get("/top-french").catch(errorHandler);
+}

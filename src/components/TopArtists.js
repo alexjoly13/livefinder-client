@@ -34,7 +34,7 @@ class TopArtists extends Component {
         <ul>
           {topArtists.map(oneTopArtist => {
             return (
-              <li>
+              <li key={oneTopArtist.id}>
                 <h3>name: {oneTopArtist.name}</h3>
                 <p>{oneTopArtist.popularity}</p>
                 <img src={oneTopArtist.images[1].url} alt="img" />

@@ -4,7 +4,7 @@ import "./App.css";
 import HomePage from "./components/HomePage.js";
 import NotFound from "./components/NotFound.js";
 import Connected from "./components/connected";
-import { getLogOut } from "./api.js";
+import TopFrenchPage from "./components/TopFrenchPage";
 
 class App extends Component {
   constructor(props) {
@@ -52,6 +52,7 @@ class App extends Component {
               );
             }}
           />
+          <Route path="/top-french" component={TopFrenchPage} />
           <Route component={NotFound} />
         </Switch>
       </div>
