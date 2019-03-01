@@ -4,6 +4,7 @@ import "./App.css";
 import HomePage from "./components/HomePage.js";
 import NotFound from "./components/NotFound.js";
 import Connected from "./components/connected";
+import { getLogOut } from "./api.js";
 
 class App extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class App extends Component {
   }
 
   render() {
+    const { currentUser } = this.state;
     return (
       <div className="App">
         <header className="Header">

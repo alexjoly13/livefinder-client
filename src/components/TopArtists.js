@@ -16,34 +16,32 @@ class TopArtists extends Component {
     getTopArtist()
       // get data from our EXPRESS API
       .then(response => {
-        // always console.log result to see  to see what the api gave you
         console.log("user top artists: ", response.data);
-        // save the JSON from the API into the state
-        this.setState({ topArtists: response.data });
+        this.setState({ topArtists: response.data.items });
       });
   }
 
   render() {
     const { topArtists } = this.state;
-    // console.log(topArtists);
+    console.log("hello top artist weshhhhhh", topArtists);
     return (
       <section className="TopArtists">
-        <h2>Top Artists</h2>
-        <button onClick={event => this.userTopArtists(event)}>
+        {/* <h2>Top Artists</h2> */}
+        {/* <button onClick={event => this.userTopArtists(event)}>
           Search Top Artists
-        </button>
+        </button> */}
 
-        {/* <ul>
+        <ul>
           {topArtists.map(oneTopArtist => {
             return (
-              <li key={oneTopArtist.id}>
+              <li>
                 <h3>name: {oneTopArtist.name}</h3>
                 <p>{oneTopArtist.popularity}</p>
                 <img src={oneTopArtist.images[1].url} alt="img" />
               </li>
             );
           })}
-        </ul> */}
+        </ul>
       </section>
     );
   }

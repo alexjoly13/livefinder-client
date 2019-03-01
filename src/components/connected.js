@@ -1,11 +1,16 @@
 import React, { Component } from "react";
+import { Switch, Route, NavLink } from "react-router-dom";
+import "./connected.css";
 import axios from "axios";
 import TopArtists from "./TopArtists";
+import { getLogOut } from "../api.js";
 
 class Connected extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      topArtist: []
+    };
   }
 
   componentDidMount() {
@@ -23,7 +28,19 @@ class Connected extends Component {
     }
   }
 
+  logoutClick() {
+    getLogOut().then(response => {
+      console.log("LOGGED OUT");
+      console.log(this.state.currentUser);
+
+      this.props.loggedIn(null);
+    });
+  }
+
   render() {
+    // const { currentUser } = this.props;
+    // const { topArtist } = this.state;
+
     if (!this.props.currentUser) {
       return <p>Loading...</p>;
     }
@@ -33,6 +50,9 @@ class Connected extends Component {
         <h2>{this.props.currentUser.fullName}</h2>
 
         <TopArtists />
+        <NavLink to="/">
+          <button onClick={() => this.logoutClick()}>Log Out</button>
+        </NavLink>
       </section>
     );
   }
