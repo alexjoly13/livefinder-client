@@ -52,6 +52,9 @@ class Connected extends Component {
         <h2>{this.props.currentUser.fullName}</h2>
 
         <TopArtists />
+        <NavLink to="/top-french">
+          <button>Go to French Selection</button>
+        </NavLink>
         <NavLink to="/">
           <button onClick={() => this.logoutClick()}>Log Out</button>
         </NavLink>

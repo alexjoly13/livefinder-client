@@ -29,7 +29,6 @@ class TopArtists extends Component {
     return (
       <section className="TopArtists">
         <h2>Your next recommended concerts</h2>
-
         <ul>
           {topArtists.map(oneArtist => {
             return (
@@ -48,7 +47,8 @@ class TopArtists extends Component {
               </li>
             );
           })}
-        </ul>
+        </ul>{" "}
+        */}
       </section>
     );
   }
