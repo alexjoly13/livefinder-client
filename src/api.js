@@ -28,3 +28,7 @@ export function getTopArtist() {
 export function getTopFrench() {
   return backendApi.get("/top-french").catch(errorHandler);
 }
+
+export function getRelatedConcerts() {
+  return backendApi.get("/similar-artist").catch(errorHandler);
+}
