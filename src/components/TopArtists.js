@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 import { getTopArtist } from "../api.js";
 
+function getConcertAddress(concert) {
+  return `/concert-info/${concert.id}`;
+}
 // import axios from "axios";
 
 class TopArtists extends Component {
@@ -25,7 +28,10 @@ class TopArtists extends Component {
 
   render() {
     const { topArtists } = this.state;
-    console.log("hello top artist weshhhhhh", topArtists);
+    const id = this.state.topArtists;
+
+    // console.log(id);
+
     return (
       <section className="TopArtists">
         <h2>Your next recommended concerts</h2>
@@ -36,14 +42,14 @@ class TopArtists extends Component {
                 {oneArtist.resultsPage.results.event.map(oneEvent => {
                   return (
                     <div>
-                      <h3>{oneEvent.displayName}</h3>
+                      <Link to={getConcertAddress(oneEvent)}>
+                        <h3>{oneEvent.displayName}</h3>
+                      </Link>
                       <p>{oneEvent.type}</p>
                       <p>{oneEvent.venue.displayName}</p>
                     </div>
                   );
                 })}
-                {/* <p>{oneArtist.popularity}</p>
-                <img src={oneArtist.images[1].url} alt="img" /> */}
               </li>
             );
           })}
