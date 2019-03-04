@@ -5,6 +5,7 @@ import HomePage from "./components/HomePage.js";
 import NotFound from "./components/NotFound.js";
 import Connected from "./components/connected";
 import TopFrenchPage from "./components/TopFrenchPage";
+import UserRelatedConcerts from "./components/UserRelatedConcerts";
 
 class App extends Component {
   constructor(props) {
@@ -53,6 +54,7 @@ class App extends Component {
             }}
           />
           <Route path="/top-french" component={TopFrenchPage} />
+          <Route path="/similar-artist" component={UserRelatedConcerts} />
           <Route component={NotFound} />
         </Switch>
       </div>

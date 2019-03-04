@@ -30,3 +30,7 @@ export function getTopFrench() {
 export function getTopArtistsList() {
   return backendApi.get("/top-artists-list").catch(errorHandler);
 }
+
+export function getRelatedConcerts() {
+  return backendApi.get("/similar-artist").catch(errorHandler);
+}

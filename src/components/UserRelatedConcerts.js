@@ -1,33 +1,34 @@
 import React, { Component } from "react";
-import "./TopFrenchPage.css";
-import { getTopFrench } from "../api.js";
+import "./UserRelatedConcerts.css";
+import { getRelatedConcerts } from "../api.js";
 
-class TopFrenchPage extends Component {
+class UserRelatedConcerts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      topFrenchArtists: []
+      artistConcerts: []
     };
   }
 
   componentDidMount() {
-    const { topFrenchArtists } = this.state;
-    getTopFrench()
+    getRelatedConcerts()
       // get data from our EXPRESS API
       .then(response => {
-        console.log("French top artists: ", response.data);
+        // console.log(response.data);
         this.setState({
-          topFrenchArtists: response.data
+          artistConcerts: response.data
         });
       });
   }
+
   render() {
-    const { topFrenchArtists } = this.state;
+    const { artistConcerts } = this.state;
+    // console.log("hello top artist weshhhhhh", artistConcerts);
     return (
-      <section>
-        <h2>Connected, check console</h2>
+      <section className="TopArtists">
+        <h2>Here are some Concerts we think you might enjoy</h2>
         <ul>
-          {topFrenchArtists.map(oneArtist => {
+          {artistConcerts.map(oneArtist => {
             return (
               <li>
                 {oneArtist.resultsPage.results.event.map(oneEvent => {
@@ -44,10 +45,10 @@ class TopFrenchPage extends Component {
               </li>
             );
           })}
-        </ul>{" "}
+        </ul>
       </section>
     );
   }
 }
 
-export default TopFrenchPage;
+export default UserRelatedConcerts;

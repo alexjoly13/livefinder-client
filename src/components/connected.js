@@ -57,6 +57,9 @@ class Connected extends Component {
         <NavLink to="/top-french">
           <button>Go to French Selection</button>
         </NavLink>
+        <NavLink to="/similar-artist">
+          <button>Our selection of similar concerts for you</button>
+        </NavLink>
         <NavLink to="/">
           <button onClick={() => this.logoutClick()}>Log Out</button>
         </NavLink>
