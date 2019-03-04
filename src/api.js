@@ -20,11 +20,13 @@ export function getLogOut() {
 }
 
 export function getTopArtist() {
-  console.log("called");
-
   return backendApi.get("/userInfo").catch(errorHandler);
 }
 
 export function getTopFrench() {
   return backendApi.get("/top-french").catch(errorHandler);
+}
+
+export function getTopArtistsList() {
+  return backendApi.get("/top-artists-list").catch(errorHandler);
 }

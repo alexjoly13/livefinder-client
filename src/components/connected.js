@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Switch, Route, NavLink } from "react-router-dom";
 import "./connected.css";
 import axios from "axios";
-import TopArtists from "./TopArtists";
+import TopArtistsLive from "./TopArtists";
 import { getLogOut } from "../api.js";
+import TopArtistsList from "./TopArtistsList";
 
 class Connected extends Component {
   constructor(props) {
@@ -51,7 +52,8 @@ class Connected extends Component {
         {/* <img src={this.props.currentUser.} /> */}
         <h2>{this.props.currentUser.fullName}</h2>
 
-        <TopArtists />
+        <TopArtistsList />
+        {/* <TopArtistsLive /> */}
         <NavLink to="/top-french">
           <button>Go to French Selection</button>
         </NavLink>
