@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { getTopArtist } from "../api.js";
-
 import "./TopArtists.css";
-
 function getConcertAddress(concert) {
   return `/concert-info/${concert.id}`;
 }
 // import axios from "axios";
-
 class TopArtists extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +13,6 @@ class TopArtists extends Component {
       topArtists: []
     };
   }
-
   componentDidMount() {
     // console.log("it works");
     // const { topArtists } = this.state;
@@ -28,12 +24,9 @@ class TopArtists extends Component {
         // console.log("user top artists: ", response.data);
       });
   }
-
   render() {
     const { topArtists } = this.state;
-
     console.log(topArtists);
-
     return (
       <section className="TopArtists">
         <h1>Your next recommended concerts.</h1>
@@ -58,7 +51,6 @@ class TopArtists extends Component {
                   }
                 </h3>
                 {/* {console.log("hello one artist", response.data)} */}
-
                 <div className="inline-carousel">
                   {oneArtist.resultsPage.results.event.map(oneEvent => {
                     return (
@@ -89,5 +81,4 @@ class TopArtists extends Component {
     );
   }
 }
-
 export default TopArtists;

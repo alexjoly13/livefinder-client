@@ -16,7 +16,7 @@ h4,
 small,
 hr,
 span {
-  margin: 5% 10%;
+  margin: 5% 10% 0;
 }
 
 /* .body {
@@ -111,5 +111,6 @@ footer {
     url("https://picsum.photos/500/500/?random");
   border-radius: 10px;
   margin: 5%;
-  padding: 5% 0;
+  padding: 2% 0;
+  text-align: center;
 }
