@@ -11,7 +11,6 @@ class TopFrenchPage extends Component {
   }
 
   componentDidMount() {
-    const { topFrenchArtists } = this.state;
     getTopFrench()
       // get data from our EXPRESS API
       .then(response => {

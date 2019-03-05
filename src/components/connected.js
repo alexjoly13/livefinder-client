@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Switch, Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 import TopArtistsLive from "./TopArtists";
 import { getLogOut } from "../api.js";
-import TopArtistsList from "./TopArtistsList";
 
 import "./connected.css";
 import UserRelatedConcerts from "./UserRelatedConcerts";
@@ -95,6 +94,9 @@ class Connected extends Component {
 
         <UserRelatedConcerts />
         <TopFrenchPage />
+        <NavLink to="/">
+          <button onClick={() => this.logoutClick()}>Log Out</button>
+        </NavLink>
       </section>
     );
   }
