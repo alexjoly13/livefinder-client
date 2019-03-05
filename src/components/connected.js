@@ -50,19 +50,15 @@ class Connected extends Component {
     return (
       <section>
         {/* <img src={this.props.currentUser.} /> */}
-        <h2>{this.props.currentUser.fullName}</h2>
+        {/* <h1>{this.props.currentUser.fullName}</h1> */}
 
-        <TopArtistsList />
-        {/* <TopArtistsLive /> */}
-        <NavLink to="/top-french">
-          <button>Go to French Selection</button>
-        </NavLink>
-        <NavLink to="/similar-artist">
-          <button>Our selection of similar concerts for you</button>
-        </NavLink>
-        <NavLink to="/">
-          <button onClick={() => this.logoutClick()}>Log Out</button>
-        </NavLink>
+        {/* <TopArtistsList /> */}
+        <TopArtistsLive />
+        <div className="genre">
+          <h1>What the fuck mate</h1>
+          <span>\\\\\\\\\\\\\\</span>
+          <p>Lorem Ipsum dolore sit amet</p>
+        </div>
       </section>
     );
   }

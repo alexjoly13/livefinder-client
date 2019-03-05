@@ -32,32 +32,46 @@ class App extends Component {
   render() {
     const { currentUser } = this.state;
     return (
-      <div className="App">
+      <section className="App">
         <header className="Header">
           <nav>
             <NavLink to="/">Home Page</NavLink>
           </nav>
         </header>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route
-            path="/connected/:loginToken?"
-            render={props => {
-              return (
-                <Connected
-                  currentUser={this.state.currentUser}
-                  loggedIn={user => this.updateUser(user)}
-                  match={props.match}
-                  history={props.history}
-                />
-              );
-            }}
-          />
-          <Route path="/top-french" component={TopFrenchPage} />
-          <Route path="/similar-artist" component={UserRelatedConcerts} />
-          <Route component={NotFound} />
-        </Switch>
-      </div>
+        <div className="body">
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route
+              path="/connected/:loginToken?"
+              render={props => {
+                return (
+                  <Connected
+                    currentUser={this.state.currentUser}
+                    loggedIn={user => this.updateUser(user)}
+                    match={props.match}
+                    history={props.history}
+                  />
+                );
+              }}
+            />
+            <Route path="/top-french" component={TopFrenchPage} />
+            <Route path="/similar-artist" component={UserRelatedConcerts} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+        <footer>
+          <NavLink to="/top-french">
+            <button>Go to French Selection</button>
+          </NavLink>
+          <NavLink to="/similar-artist">
+            <button>Our selection of similar concerts for you</button>
+          </NavLink>
+          <NavLink to="/">
+            <button onClick={() => this.logoutClick()}>Log Out</button>
+          </NavLink>
+          <p>Made with 🎸 at Ironhack Paris</p>
+        </footer>
+      </section>
     );
   }
 }
