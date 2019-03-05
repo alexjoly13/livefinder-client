@@ -6,15 +6,14 @@ class ConcertInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      concert: {},
-      myConcert: []
+      concert: {}
     };
   }
 
   componentDidMount() {
     const { params } = this.props.match;
     concertInfo(params.concertId).then(response => {
-      this.setState({ concert: response.data.results.event });
+      this.setState({ concert: response.data });
     });
   }
 
@@ -30,7 +29,7 @@ class ConcertInfo extends Component {
   }
 
   render() {
-    const { concert, myConcert } = this.state;
+    const { concert } = this.state;
     console.log("concert INFO ------", concert);
     return (
       <section>

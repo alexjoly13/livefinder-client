@@ -42,6 +42,5 @@ export function concertInfo(concertId) {
 
 export function addConcert(concertId) {
   console.log(concertId);
-
   return backendApi.post(`/concert-info/${concertId}`).catch(errorHandler);
 }

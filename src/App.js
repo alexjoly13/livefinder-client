@@ -57,6 +57,7 @@ class App extends Component {
             />
             <Route path="/top-french" component={TopFrenchPage} />
             <Route path="/similar-artist" component={UserRelatedConcerts} />
+            <Route path="/concert-info/:concertId" component={ConcertInfo} />
             <Route component={NotFound} />
           </Switch>
         </div>
@@ -66,9 +67,6 @@ class App extends Component {
           </NavLink>
           <NavLink to="/similar-artist">
             <button>Our selection of similar concerts for you</button>
-          </NavLink>
-          <NavLink to="/">
-            <button onClick={() => this.logoutClick()}>Log Out</button>
           </NavLink>
           <p>Made with 🎸 at Ironhack Paris</p>
         </footer>

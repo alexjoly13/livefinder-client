@@ -59,6 +59,9 @@ class Connected extends Component {
           <span>\\\\\\\\\\\\\\</span>
           <p>Lorem Ipsum dolore sit amet</p>
         </div>
+        <NavLink to="/">
+          <button onClick={() => this.logoutClick()}>Log Out</button>
+        </NavLink>
       </section>
     );
   }
