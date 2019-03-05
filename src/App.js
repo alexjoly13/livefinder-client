@@ -6,6 +6,7 @@ import NotFound from "./components/NotFound.js";
 import Connected from "./components/connected";
 import TopFrenchPage from "./components/TopFrenchPage";
 import UserRelatedConcerts from "./components/UserRelatedConcerts";
+import GenericInfosHome from "./components/GenericHomepage";
 import ConcertInfo from "./components/ConcertInfo.js";
 
 class App extends Component {
@@ -34,11 +35,6 @@ class App extends Component {
     const { currentUser } = this.state;
     return (
       <section className="App">
-        <header className="Header">
-          <nav>
-            <NavLink to="/">Home Page</NavLink>
-          </nav>
-        </header>
         <div className="body">
           <Switch>
             <Route exact path="/" component={HomePage} />
@@ -58,17 +54,24 @@ class App extends Component {
             <Route path="/top-french" component={TopFrenchPage} />
             <Route path="/similar-artist" component={UserRelatedConcerts} />
             <Route path="/concert-info/:concertId" component={ConcertInfo} />
+            <Route path="/generic" component={GenericInfosHome} />
             <Route component={NotFound} />
           </Switch>
         </div>
         <footer>
+          <NavLink to="/">Home Page</NavLink>
           <NavLink to="/top-french">
             <button>Go to French Selection</button>
           </NavLink>
           <NavLink to="/similar-artist">
             <button>Our selection of similar concerts for you</button>
           </NavLink>
-          <p>Made with 🎸 at Ironhack Paris</p>
+          <NavLink to="/">
+            <button onClick={() => this.logoutClick()}>Log Out</button>
+          </NavLink>
+          <p>
+            Made with <span>🎸</span> at Ironhack Paris
+          </p>
         </footer>
       </section>
     );
