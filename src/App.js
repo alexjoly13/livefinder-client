@@ -66,9 +66,6 @@ class App extends Component {
           <NavLink to="/similar-artist">
             <button>Our selection of similar concerts for you</button>
           </NavLink>
-          <NavLink to="/">
-            <button onClick={() => this.logoutClick()}>Log Out</button>
-          </NavLink>
           <p>
             Made with <span>🎸</span> at Ironhack Paris
           </p>
