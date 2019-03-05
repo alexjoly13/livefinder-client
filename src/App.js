@@ -59,7 +59,7 @@ class App extends Component {
           </Switch>
         </div>
         <footer>
-          <NavLink to="/">Home Page</NavLink>
+          <NavLink to="/connected">Home Page</NavLink>
           <NavLink to="/top-french">
             <button>Go to French Selection</button>
           </NavLink>

@@ -1,6 +1,11 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./TopFrenchPage.css";
 import { getTopFrench } from "../api.js";
+
+function getConcertAddress(concert) {
+  return `/concert-info/${concert.id}`;
+}
 
 class TopFrenchPage extends Component {
   constructor(props) {
@@ -49,7 +54,9 @@ class TopFrenchPage extends Component {
                               {oneEvent.type}
                             </span>
                             <h4>{oneEvent.venue.displayName}</h4>
-                            <h3>{oneEvent.displayName}</h3>
+                            <Link to={getConcertAddress(oneEvent)}>
+                              <h3>{oneEvent.displayName}</h3>
+                            </Link>
                           </div>
                         </div>
                       </div>
