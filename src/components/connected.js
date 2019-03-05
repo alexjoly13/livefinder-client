@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Switch, Route, NavLink } from "react-router-dom";
-import "./connected.css";
 import axios from "axios";
 import TopArtistsLive from "./TopArtists";
 import { getLogOut } from "../api.js";
 import TopArtistsList from "./TopArtistsList";
+
+import "./connected.css";
 
 class Connected extends Component {
   constructor(props) {
