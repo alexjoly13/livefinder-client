@@ -17,20 +17,18 @@ class TopArtists extends Component {
 
   componentDidMount() {
     // console.log("it works");
-    const { topArtists } = this.state;
     getTopArtist()
       // get data from our EXPRESS API
       .then(response => {
         this.setState({ topArtists: response.data });
-        console.log("user top artists: ", topArtists);
+        // console.log("user top artists: ", topArtists);
       });
   }
 
   render() {
     const { topArtists } = this.state;
-    const id = this.state.topArtists;
 
-    // console.log(id);
+    console.log(topArtists);
 
     return (
       <section className="TopArtists">
@@ -45,6 +43,7 @@ class TopArtists extends Component {
                       <Link to={getConcertAddress(oneEvent)}>
                         <h3>{oneEvent.displayName}</h3>
                       </Link>
+                      <p>{oneEvent.performance[0].displayName}</p>
                       <p>{oneEvent.type}</p>
                       <p>{oneEvent.venue.displayName}</p>
                     </div>
