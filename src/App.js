@@ -70,7 +70,9 @@ class App extends Component {
           <NavLink to="/">
             <button onClick={() => this.logoutClick()}>Log Out</button>
           </NavLink>
-          <p>Made with 🎸 at Ironhack Paris</p>
+          <p>
+            Made with <span>🎸</span> at Ironhack Paris
+          </p>
         </footer>
       </section>
     );
