@@ -34,11 +34,6 @@ class App extends Component {
     const { currentUser } = this.state;
     return (
       <section className="App">
-        <header className="Header">
-          <nav>
-            <NavLink to="/">Home Page</NavLink>
-          </nav>
-        </header>
         <div className="body">
           <Switch>
             <Route exact path="/" component={HomePage} />
@@ -61,6 +56,7 @@ class App extends Component {
           </Switch>
         </div>
         <footer>
+          <NavLink to="/">Home Page</NavLink>
           <NavLink to="/top-french">
             <button>Go to French Selection</button>
           </NavLink>
