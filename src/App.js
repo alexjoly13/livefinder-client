@@ -67,7 +67,11 @@ class App extends Component {
             <button>Our selection of similar concerts for you</button>
           </NavLink>
           <p>
-            Made with <span>🎸</span> at Ironhack Paris
+            Made with{" "}
+            <span role="img" aria-label="guitar">
+              🎸
+            </span>{" "}
+            at Ironhack Paris
           </p>
         </footer>
       </section>

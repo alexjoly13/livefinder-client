@@ -38,7 +38,7 @@ class GenericInfosHome extends Component {
             <div key={oneArtist.mbid}>
               <h3>{oneArtist.name}</h3>
               <p>Listeners: {oneArtist.listeners}</p>
-              <img src={this.oneImg(oneArtist.image[4])} />
+              <img src={this.oneImg(oneArtist.image[4])} alt="artist picto" />
             </div>
           );
         })}

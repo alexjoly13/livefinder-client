@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { signUpSpotify } from "../api.js";
 import { NavLink } from "react-router-dom";
 
 import "./HomePage.css";
