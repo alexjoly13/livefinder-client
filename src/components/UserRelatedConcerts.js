@@ -35,7 +35,7 @@ class UserRelatedConcerts extends Component {
             return (
               <div className="column-card">
                 {oneArtist.resultsPage.results.event.map(oneEvent => {
-                  console.log("hello aaaaaaaaaaaaaaaaa", oneEvent);
+                  // console.log("hello aaaaaaaaaaaaaaaaa", oneEvent);
                   return (
                     <div>
                       {/* <p>
