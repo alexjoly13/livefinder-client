@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./UserRelatedConcerts.css";
 import { getRelatedConcerts } from "../api.js";
+
+import "./UserRelatedConcerts.css";
 
 class UserRelatedConcerts extends Component {
   constructor(props) {
@@ -23,29 +24,34 @@ class UserRelatedConcerts extends Component {
 
   render() {
     const { artistConcerts } = this.state;
-    // console.log("hello top artist weshhhhhh", artistConcerts);
     return (
       <section className="TopArtists">
-        <h2>Here are some Concerts we think you might enjoy</h2>
-        <ul>
+        <h1>You may also like.</h1>
+        <span>\\\\\\\\\\\\\\</span>
+        <p>Here are some Concerts we think you might enjoy</p>
+
+        <div>
           {artistConcerts.map(oneArtist => {
             return (
-              <li>
+              <div className="column-card">
                 {oneArtist.resultsPage.results.event.map(oneEvent => {
+                  console.log("hello aaaaaaaaaaaaaaaaa", oneEvent);
                   return (
                     <div>
-                      <h3>{oneEvent.displayName}</h3>
-                      <p>{oneEvent.type}</p>
-                      <p>{oneEvent.venue.displayName}</p>
+                      {/* <p>
+                        <span className="outline-text">{oneEvent.type}</span>
+                        </p>
+                      <h4>{oneEvent.venue.displayName}</h4> */}
+                      <h3>{oneEvent.performance[0].displayName}</h3>
                     </div>
                   );
                 })}
                 {/* <p>{oneArtist.popularity}</p>
                 <img src={oneArtist.images[1].url} alt="img" /> */}
-              </li>
+              </div>
             );
           })}
-        </ul>
+        </div>
       </section>
     );
   }

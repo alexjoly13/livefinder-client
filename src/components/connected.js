@@ -6,6 +6,8 @@ import { getLogOut } from "../api.js";
 import TopArtistsList from "./TopArtistsList";
 
 import "./connected.css";
+import UserRelatedConcerts from "./UserRelatedConcerts";
+import TopFrenchPage from "./TopFrenchPage";
 
 class Connected extends Component {
   constructor(props) {
@@ -49,17 +51,50 @@ class Connected extends Component {
       return <p>Loading...</p>;
     }
     return (
-      <section>
+      <section className="Connected">
+        <header className="Header">
+          <div className="header-text">
+            <h2>Featured</h2>
+            <p>The Maurice's band</p>
+          </div>
+        </header>
         {/* <img src={this.props.currentUser.} /> */}
         {/* <h1>{this.props.currentUser.fullName}</h1> */}
 
-        {/* <TopArtistsList /> */}
         <TopArtistsLive />
-        <div className="genre">
-          <h1>What the fuck mate</h1>
-          <span>\\\\\\\\\\\\\\</span>
-          <p>Lorem Ipsum dolore sit amet</p>
+        <div className="section-2">
+          <div className="section-2-text">
+            <h1>What the fuck mate</h1>
+            <span>\\\\\\\\\\\\\\</span>
+            <p>Lorem Ipsum dolore sit amet</p>
+            <div className="flex-small-cards">
+              <div className="small-card">
+                <h3>Hello</h3>
+              </div>
+              <div className="small-card">
+                <h3>Hello</h3>
+              </div>
+              <div className="small-card">
+                <h3>Hello</h3>
+              </div>
+              <div className="small-card">
+                <h3>Hello</h3>
+              </div>
+              <div className="small-card">
+                <h3>Hello</h3>
+              </div>
+              <div className="small-card">
+                <h3>Hello</h3>
+              </div>
+              <div className="small-card">
+                <h3>Hello</h3>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <UserRelatedConcerts />
+        <TopFrenchPage />
       </section>
     );
   }

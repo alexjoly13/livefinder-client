@@ -32,20 +32,31 @@ class TopFrenchPage extends Component {
         <div>
           {topFrenchArtists.map(oneArtist => {
             return (
-              <div className="inline-carousel">
-                {oneArtist.resultsPage.results.event.map(oneEvent => {
-                  return (
-                    <div>
-                      <div className="inline-card">
-                        <div>
-                          <span className="outline-text">{oneEvent.type}</span>
-                          <h4>{oneEvent.venue.displayName}</h4>
-                          <h3>{oneEvent.displayName}</h3>
+              <div>
+                <hr />
+                <h2>
+                  {
+                    oneArtist.resultsPage.results.event[0].performance[0]
+                      .displayName
+                  }
+                </h2>
+                <div className="inline-carousel">
+                  {oneArtist.resultsPage.results.event.map(oneEvent => {
+                    return (
+                      <div>
+                        <div className="inline-card">
+                          <div>
+                            <span className="outline-text">
+                              {oneEvent.type}
+                            </span>
+                            <h4>{oneEvent.venue.displayName}</h4>
+                            <h3>{oneEvent.displayName}</h3>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
