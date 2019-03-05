@@ -36,7 +36,18 @@ class GenericInfosHome extends Component {
     return (
       <section className="GenericInfosHome">
         <header>
-          <h2>hello generic homepage</h2>
+          <div>
+            <span className="outline-text">GENERIC</span>
+            <h1>
+              Hello.
+              <br /> You are not connected?
+            </h1>
+            <h2>Don't panic, we got your back!</h2>
+            <p>
+              You are currently on the unsynchronised page. You will discover
+              artits and lives that are famous around you :)
+            </p>
+          </div>
         </header>
         <h1>Top Artists in France</h1>
         <span>\\\\\\\\\\\\\\</span>

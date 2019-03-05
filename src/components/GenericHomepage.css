@@ -1,4 +1,16 @@
 .GenericInfosHome header {
-  height: 20vh;
+  height: 50vh;
   margin-top: -5%;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.3) 80%
+    ),
+    url("https://picsum.photos/500/500/?random");
+  background-size: cover;
+  position: relative;
+}
+
+.GenericInfosHome header div {
+  position: absolute;
+  bottom: 10%;
 }
