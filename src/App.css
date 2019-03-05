@@ -1,33 +1,115 @@
+/* FONTS, SIZE AND COLORS */
+/* ---------------------------------------- */
+@import url("https://fonts.googleapis.com/css?family=Lora:400i|Montserrat:900|Raleway");
+
 .App {
+  background-color: #242424;
+  color: aliceblue;
+  font-size: 1em;
+  font-family: "Raleway", sans-serif;
+}
+.App p,
+h1,
+h2,
+h3,
+h4,
+small,
+hr,
+span {
+  margin: 5% 10%;
+}
+
+/* .body {
+  padding: 5%;
+} */
+
+.App h1 {
+  font-size: 1.7em;
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
+}
+
+.App h2 {
+  font-size: 1.3em;
+  line-height: 1.3em;
+  font-family: "Lora", serif;
+}
+.App h3 {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
+}
+
+.App h4 {
+  font-size: 1em;
+  font-family: "Lora", serif;
+}
+
+.App a,
+button {
+  font-family: "Raleway", sans-serif;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.App small {
+  color: #707070;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.App hr {
+  border: 0.5px solid #707070;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+footer {
+  margin: 5vh 0 0 0;
+  padding: 5%;
+  text-align: center;
+  background-color: black;
+}
+
+/* CARDS AND LIST */
+
+.inline-card {
+  padding: 12px;
+  margin: 10% 20% 10% 0%;
+  height: 200px;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.2) 80%
+    ),
+    url("https://picsum.photos/500/300/?random");
+  border-radius: 10px;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  width: 80%;
+  min-width: 300px;
+  margin-left: 15px;
+}
+
+.inline-card p {
+  top: 10px;
+}
+
+.inline-carousel {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.outline-text {
+  border: 1px solid aliceblue;
+  padding: 5px 10px;
+  border-radius: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.column-card {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.2) 80%
+    ),
+    url("https://picsum.photos/500/500/?random");
+  border-radius: 10px;
+  margin: 5%;
+  padding: 5% 0;
 }

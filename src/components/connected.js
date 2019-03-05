@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Switch, Route, NavLink } from "react-router-dom";
 import "./connected.css";
 import axios from "axios";
-import TopArtists from "./TopArtists";
+import TopArtistsLive from "./TopArtists";
 import { getLogOut } from "../api.js";
+import TopArtistsList from "./TopArtistsList";
 
 class Connected extends Component {
   constructor(props) {
@@ -49,18 +50,15 @@ class Connected extends Component {
     return (
       <section>
         {/* <img src={this.props.currentUser.} /> */}
-        <h2>{this.props.currentUser.fullName}</h2>
+        {/* <h1>{this.props.currentUser.fullName}</h1> */}
 
-        <TopArtists />
-        <NavLink to="/top-french">
-          <button>Go to French Selection</button>
-        </NavLink>
-        <NavLink to="/similar-artist">
-          <button>Our selection of similar concerts for you</button>
-        </NavLink>
-        <NavLink to="/">
-          <button onClick={() => this.logoutClick()}>Log Out</button>
-        </NavLink>
+        {/* <TopArtistsList /> */}
+        <TopArtistsLive />
+        <div className="genre">
+          <h1>What the fuck mate</h1>
+          <span>\\\\\\\\\\\\\\</span>
+          <p>Lorem Ipsum dolore sit amet</p>
+        </div>
       </section>
     );
   }

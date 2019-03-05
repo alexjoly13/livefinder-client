@@ -25,26 +25,31 @@ class TopFrenchPage extends Component {
     const { topFrenchArtists } = this.state;
     return (
       <section>
-        <h2>Connected, check console</h2>
-        <ul>
+        <h1>Trending lives around you.</h1>
+        {/* <h2>Just for your</h2> */}
+        <span>\\\\\\\\\\\\\\</span>
+        <p>Discover which bands are trenging right now around you.</p>
+        <div>
           {topFrenchArtists.map(oneArtist => {
             return (
-              <li>
+              <div className="inline-carousel">
                 {oneArtist.resultsPage.results.event.map(oneEvent => {
                   return (
                     <div>
-                      <h3>{oneEvent.displayName}</h3>
-                      <p>{oneEvent.type}</p>
-                      <p>{oneEvent.venue.displayName}</p>
+                      <div className="inline-card">
+                        <div>
+                          <span className="outline-text">{oneEvent.type}</span>
+                          <h4>{oneEvent.venue.displayName}</h4>
+                          <h3>{oneEvent.displayName}</h3>
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
-                {/* <p>{oneArtist.popularity}</p>
-                <img src={oneArtist.images[1].url} alt="img" /> */}
-              </li>
+              </div>
             );
           })}
-        </ul>{" "}
+        </div>
       </section>
     );
   }
