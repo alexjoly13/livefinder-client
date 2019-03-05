@@ -56,15 +56,23 @@ button {
   text-align: center;
 }
 
-.App hr {
-  border: 0.5px solid #707070;
-}
-
 footer {
   margin: 5vh 0 0 0;
   padding: 5%;
   text-align: center;
   background-color: black;
+}
+
+/* SEPARATORS */
+
+.App hr {
+  border: 0.5px solid #707070;
+}
+
+.App .small-hr {
+  width: 50px;
+  border: 2px solid blue;
+  margin: 10px auto;
 }
 
 /* CARDS AND LIST */
@@ -103,16 +111,47 @@ footer {
   border-radius: 15px;
 }
 
+/* .column-card-flex {
+  display: flex;
+} */
+
 .column-card {
   background-image: linear-gradient(
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.2) 80%
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.3) 80%
     ),
     url("https://picsum.photos/500/500/?random");
+  background-size: cover;
   border-radius: 10px;
   margin: 5%;
   padding: 2% 0;
   text-align: center;
+  max-width: 400px;
+  min-width: 200px;
 }
 
-/* CONCERT CARDS */
+/* FOR IMAGED CARDS ONLY */
+
+.column-card-with-image {
+  background-color: white;
+  border-radius: 10px;
+  margin: 5% 5% 5% 20%;
+  padding: 2% 0;
+  color: #242424;
+  position: relative;
+  height: 120px;
+}
+.column-card-with-image img {
+  width: 100px;
+  margin-left: -50px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.column-card-with-image .column-card-with-image-text {
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  /* padding-left: 0px; */
+  text-align: right;
+}
