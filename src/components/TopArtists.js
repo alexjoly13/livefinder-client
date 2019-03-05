@@ -66,7 +66,9 @@ class TopArtists extends Component {
                               </span>
                             </p>
                             <h4>{oneEvent.venue.displayName}</h4>
-                            <h3>{oneEvent.displayName}</h3>
+                            <Link to={getConcertAddress(oneEvent)}>
+                              <h3>{oneEvent.displayName}</h3>
+                            </Link>
                           </div>
                         </div>
                       </div>

@@ -6,6 +6,7 @@ import NotFound from "./components/NotFound.js";
 import Connected from "./components/connected";
 import TopFrenchPage from "./components/TopFrenchPage";
 import UserRelatedConcerts from "./components/UserRelatedConcerts";
+import GenericInfosHome from "./components/GenericHomepage";
 import ConcertInfo from "./components/ConcertInfo.js";
 
 class App extends Component {
@@ -52,6 +53,7 @@ class App extends Component {
             />
             <Route path="/top-french" component={TopFrenchPage} />
             <Route path="/similar-artist" component={UserRelatedConcerts} />
+            <Route path="/generic" component={GenericInfosHome} />
             <Route component={NotFound} />
           </Switch>
         </div>

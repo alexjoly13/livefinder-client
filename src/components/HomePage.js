@@ -40,7 +40,7 @@ class HomePage extends Component {
             lives. And if you want to sync later on, you still can come back to
             this screen.
           </p>
-          <NavLink className="big-btn" to="/connected">
+          <NavLink className="big-btn" to="/generic">
             Don't connect
           </NavLink>
         </div>

@@ -45,3 +45,7 @@ export function addConcert(concertId) {
 
   return backendApi.post(`/concert-info/${concertId}`).catch(errorHandler);
 }
+
+export function genericInfos() {
+  return backendApi.get("/generic").catch(errorHandler);
+}
