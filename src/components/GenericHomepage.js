@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./GenericHomepage.css";
 import { genericInfos } from "../api.js";
+import NextConcertsParis from "../GenericNextConcerts";
 
 class GenericInfosHome extends Component {
   constructor(props) {
@@ -22,14 +23,14 @@ class GenericInfosHome extends Component {
   }
 
   oneImg(el) {
-    console.log(el);
+    // console.log(el);
 
     return Object.values(el);
   }
 
   render() {
     const { franceTopArtists } = this.state;
-    console.log(franceTopArtists);
+    // console.log(franceTopArtists);
     return (
       <section className="GenericInfosHome">
         <h2>Top Artists in France</h2>;
@@ -42,6 +43,7 @@ class GenericInfosHome extends Component {
             </div>
           );
         })}
+        <NextConcertsParis />
       </section>
     );
   }

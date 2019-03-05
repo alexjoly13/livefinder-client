@@ -47,3 +47,7 @@ export function addConcert(concertId) {
 export function genericInfos() {
   return backendApi.get("/generic").catch(errorHandler);
 }
+
+export function nextConcertsParis() {
+  return backendApi.get("/concerts-paris").catch(errorHandler);
+}
