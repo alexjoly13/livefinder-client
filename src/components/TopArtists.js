@@ -29,7 +29,6 @@ class TopArtists extends Component {
   render() {
     const { topArtists } = this.state;
     const id = this.state.topArtists;
-
     // console.log(id);
 
     return (

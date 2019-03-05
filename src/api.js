@@ -37,3 +37,9 @@ export function getRelatedConcerts() {
 export function concertInfo(concertId) {
   return backendApi.get(`/concert-info/${concertId}`).catch(errorHandler);
 }
+
+export function addConcert(concertId) {
+  console.log(concertId);
+
+  return backendApi.post(`/concert-info/${concertId}`).catch(errorHandler);
+}
