@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Switch, Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 import TopArtistsLive from "./TopArtists";
 import { getLogOut } from "../api.js";
-import TopArtistsList from "./TopArtistsList";
 
 import "./connected.css";
 

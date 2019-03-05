@@ -1,5 +1,4 @@
 import axios from "axios";
-import ConcertInfo from "./components/ConcertInfo";
 
 const backendApi = axios.create({
   baseURL: "http://localhost:8888",

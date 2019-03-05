@@ -44,7 +44,12 @@ class TopArtists extends Component {
           {console.log("hello top artist", topArtists)}
           {topArtists.map(oneArtist => {
             return (
-              <div>
+              <div
+                key={
+                  oneArtist.resultsPage.results.event[0].performance[0]
+                    .displayName
+                }
+              >
                 <h3>
                   #
                   {
@@ -57,7 +62,7 @@ class TopArtists extends Component {
                 <div className="inline-carousel">
                   {oneArtist.resultsPage.results.event.map(oneEvent => {
                     return (
-                      <div>
+                      <div key={oneEvent.displayName}>
                         <div className="inline-card">
                           <div>
                             <p>
