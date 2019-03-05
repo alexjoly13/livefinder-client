@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 import { getTopArtist } from "../api.js";
 
 import "./TopArtists.css";
 
+function getConcertAddress(concert) {
+  return `/concert-info/${concert.id}`;
+}
 // import axios from "axios";
 
 class TopArtists extends Component {
@@ -26,6 +29,10 @@ class TopArtists extends Component {
 
   render() {
     const { topArtists } = this.state;
+    const id = this.state.topArtists;
+
+    // console.log(id);
+
     return (
       <section className="TopArtists">
         <h1>Your next recommended concerts.</h1>

@@ -1,4 +1,5 @@
 import axios from "axios";
+import ConcertInfo from "./components/ConcertInfo";
 
 const backendApi = axios.create({
   baseURL: "http://localhost:8888",
@@ -33,4 +34,8 @@ export function getTopArtistsList() {
 
 export function getRelatedConcerts() {
   return backendApi.get("/similar-artist").catch(errorHandler);
+}
+
+export function concertInfo(concertId) {
+  return backendApi.get(`/concert-info/${concertId}`).catch(errorHandler);
 }

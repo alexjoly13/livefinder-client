@@ -6,6 +6,7 @@ import NotFound from "./components/NotFound.js";
 import Connected from "./components/connected";
 import TopFrenchPage from "./components/TopFrenchPage";
 import UserRelatedConcerts from "./components/UserRelatedConcerts";
+import ConcertInfo from "./components/ConcertInfo.js";
 
 class App extends Component {
   constructor(props) {
