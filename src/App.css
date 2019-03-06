@@ -74,6 +74,28 @@ footer {
   background-color: black;
 }
 
+.date-day {
+  color: aliceblue;
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+  font-size: 1.4em;
+  text-decoration: underline;
+}
+.date-month {
+  color: aliceblue;
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+  font-size: 1.4em;
+}
+.date-year {
+  color: aliceblue;
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+  font-size: 1.4em;
+  position: absolute;
+  bottom: 10px;
+}
+
 /* SEPARATORS */
 
 .App hr {
@@ -146,29 +168,32 @@ footer {
   top: 5%;
 }
 
-.inline-small-card {
-  padding: 12px;
-  margin: 10% 20% 10% 0%;
-  height: 1500px;
+.inline-thin-card {
+  margin: 10% 15px 10% 0%;
+  /* height: 200px; */
+  border-radius: 5px;
+  min-width: 300px;
+  /* width: 100%; */
+  margin-left: 15px;
+  position: relative;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+}
+.card-thin-img {
   background-image: linear-gradient(
       rgba(0, 40, 250, 0.4) 0%,
       rgba(0, 40, 250, 0.4) 80%
     ),
     url("https://picsum.photos/500/300/?random");
-  border-radius: 5px;
-  width: 400px;
-  margin-left: 15px;
+  background-position: cover;
+  width: 30%;
+  border-radius: 5px 0 0 5px;
   position: relative;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-}
-.card-small-text {
-  position: absolute;
-  bottom: 5%;
 }
 
-/* .column-card-flex {
-  display: flex;
-} */
+.text-thin-card h3 {
+  color: #242424;
+}
 
 .column-card {
   background-image: linear-gradient(
