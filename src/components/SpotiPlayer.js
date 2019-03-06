@@ -35,13 +35,13 @@ class SpotiPlayer extends Component {
               oneArtist.id
             }`;
             return (
-              <div>
+              <div key={oneArtist.id}>
                 <h4>{oneArtist.name}</h4>
                 <iframe
                   src={artistUrl}
                   width="300"
                   height="380"
-                  frameborder="0"
+                  frameBorder="0"
                   allowtransparency="true"
                   allow="encrypted-media"
                 />
