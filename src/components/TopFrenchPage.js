@@ -29,10 +29,10 @@ class TopFrenchPage extends Component {
     const { topFrenchArtists } = this.state;
     return (
       <section>
-        <h1>Trending lives around you.</h1>
-        {/* <h2>Just for your</h2> */}
-        <span>\\\\\\\\\\\\\\</span>
+        <h3>Trending lives around you.</h3>
+
         <p>Discover which bands are trenging right now around you.</p>
+        <hr className="small-hr" />
         <div>
           {topFrenchArtists.map(oneArtist => {
             return (

@@ -8,6 +8,7 @@ import "./connected.css";
 
 import UserRelatedConcerts from "./UserRelatedConcerts";
 import TopFrenchPage from "./TopFrenchPage";
+import AttendingEvent from "./AttendingEvent";
 
 class Connected extends Component {
   constructor(props) {
@@ -77,37 +78,7 @@ class Connected extends Component {
         </header>
 
         <TopArtistsLive />
-        <div className="section-2">
-          <div className="section-2-text">
-            <h1>What the fuck mate</h1>
-            <span>\\\\\\\\\\\\\\</span>
-            <p>Lorem Ipsum dolore sit amet</p>
-            <div className="flex-small-cards">
-              <div className="small-card">
-                <h3>Hello</h3>
-              </div>
-              <div className="small-card">
-                <h3>Hello</h3>
-              </div>
-              <div className="small-card">
-                <h3>Hello</h3>
-              </div>
-              <div className="small-card">
-                <h3>Hello</h3>
-              </div>
-              <div className="small-card">
-                <h3>Hello</h3>
-              </div>
-              <div className="small-card">
-                <h3>Hello</h3>
-              </div>
-              <div className="small-card">
-                <h3>Hello</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <AttendingEvent />
         <UserRelatedConcerts />
         <TopFrenchPage />
         <NavLink to="/">

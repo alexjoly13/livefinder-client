@@ -146,16 +146,37 @@ footer {
   top: 5%;
 }
 
+.inline-small-card {
+  padding: 12px;
+  margin: 10% 20% 10% 0%;
+  height: 1500px;
+  background-image: linear-gradient(
+      rgba(0, 40, 250, 0.4) 0%,
+      rgba(0, 40, 250, 0.4) 80%
+    ),
+    url("https://picsum.photos/500/300/?random");
+  border-radius: 5px;
+  width: 400px;
+  margin-left: 15px;
+  position: relative;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.card-small-text {
+  position: absolute;
+  bottom: 5%;
+}
+
 /* .column-card-flex {
   display: flex;
 } */
 
 .column-card {
   background-image: linear-gradient(
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.3) 80%
+      rgba(0, 40, 250, 0.4) 0%,
+      rgba(0, 40, 250, 0.4) 80%
     ),
-    url("https://picsum.photos/500/500/?random");
+    url("https://picsum.photos/500/300/?random");
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   background-size: cover;
   border-radius: 5px;
   margin: 5%;
