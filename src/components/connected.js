@@ -78,10 +78,10 @@ class Connected extends Component {
           </div>
         </header>
 
-        <TopArtistsLive />
+        <TopArtistsLive {...this.props} />
         <AttendingEvent {...this.props} />
-        <UserRelatedConcerts />
-        <TopFrenchPage />
+        <UserRelatedConcerts {...this.props} />
+        <TopFrenchPage {...this.props} />
         <NavLink to="/">
           <button onClick={() => this.logoutClick()}>Log Out</button>
         </NavLink>

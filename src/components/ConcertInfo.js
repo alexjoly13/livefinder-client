@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { concertInfo } from "../api.js";
 import { addConcert } from "../api.js";
+import { Redirect } from "react-router-dom";
 
 import "./ConcertInfo.css";
 
@@ -12,7 +13,8 @@ class ConcertInfo extends Component {
         location: {},
         performance: [0],
         venue: {},
-        artistName: ""
+        artistName: "",
+        isSubmitSuccessful: false
       }
     };
   }
@@ -34,16 +36,16 @@ class ConcertInfo extends Component {
     // console.log(params);
 
     addConcert(params.concertId).then(response => {
-      // console.log("concert added", response.data);
+      this.setState({ isSubmitSuccessful: true });
     });
   }
 
   render() {
     const { artistName } = this.state;
     const { concert } = this.state;
-    console.log("concert INFO ------", concert);
-    console.log("Artist name :", artistName);
-    return (
+    return this.state.isSubmitSuccessful ? (
+      <Redirect to="/connected" />
+    ) : (
       <section className="ConcertInfo">
         <header className="Header">
           <h1>Next live for {concert.performance[0].displayName}</h1>
@@ -65,7 +67,6 @@ class ConcertInfo extends Component {
           <h4>{concert.venue.displayName}</h4>
           <hr />
           <h3>{concert.displayName}</h3>
-          {/* <p>{concert.performance[0].displayName}</p> */}
           <p>
             {concert.venue.street}, {concert.venue.zip}
           </p>
@@ -73,7 +74,6 @@ class ConcertInfo extends Component {
             {concert.location.country}
             {concert.location.city}.
           </p>
-          {/* <p>{concert}</p> */}
           <button onClick={event => this.handleSubmit(event)}>
             <h3>ATTENDING</h3>
           </button>

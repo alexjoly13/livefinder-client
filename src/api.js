@@ -55,3 +55,7 @@ export function nextConcertsParis() {
 export function spotiPlayer() {
   return backendApi.get("/spotiPlayer").catch(errorHandler);
 }
+
+export function userDashboard() {
+  return backendApi.get("/dashboard-info").catch(errorHandler);
+}
