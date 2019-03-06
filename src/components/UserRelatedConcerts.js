@@ -40,10 +40,10 @@ class UserRelatedConcerts extends Component {
           {artistConcerts.map(oneArtist => {
             return (
               <div className="inline-carousel">
-                {oneArtist.resultsPage.results.event.map(oneEvent => {
-                  // console.log("hello aaaaaaaaaaaaaaaaa", oneEvent);
-                  return (
-                    <div className="inline-carousel">
+                <div className="inline-carousel">
+                  {oneArtist.resultsPage.results.event.map(oneEvent => {
+                    // console.log("hello aaaaaaaaaaaaaaaaa", oneEvent);
+                    return (
                       <div className="inline-thin-card">
                         <div className="card-thin-img">
                           <p className="date-day">
@@ -66,9 +66,9 @@ class UserRelatedConcerts extends Component {
                           </Link>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
                 {/* <p>{oneArtist.popularity}</p>
                 <img src={oneArtist.images[1].url} alt="img" /> */}
               </div>
