@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./GenericNextConcerts.css";
-import { nextConcertsParis } from "./api";
+import { nextConcertsParis } from "../api";
+import ArtistDetails from "./ArtistPage";
 
 function getConcertAddress(concert) {
   return `/concert-info/${concert.id}`;
@@ -21,14 +22,14 @@ class NextConcertsParis extends Component {
       .then(response => {
         // console.log(response.data);
         this.setState({
-          concertsParis: response.data.resultsPage.results.event
+          concertsParis: response.data
         });
       });
   }
 
   render() {
     const { concertsParis } = this.state;
-    // console.log(concertsParis);
+    console.log(concertsParis);
     return (
       <section className="NextConcertsParis">
         <h3>Upcoming Concerts in Paris</h3>
@@ -40,6 +41,9 @@ class NextConcertsParis extends Component {
               </Link>
               <p>{oneConcert.type}</p>
               <p>{oneConcert.venue.displayName}</p>
+              <ArtistDetails
+                artistName={oneConcert.performance[0].artist.displayName}
+              />
             </div>
           );
         })}

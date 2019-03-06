@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./GenericHomepage.css";
 import { genericInfos } from "../api.js";
-import NextConcertsParis from "../GenericNextConcerts";
+import NextConcertsParis from "./GenericNextConcerts";
 
 class GenericInfosHome extends Component {
   constructor(props) {

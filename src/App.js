@@ -8,6 +8,7 @@ import TopFrenchPage from "./components/TopFrenchPage";
 import UserRelatedConcerts from "./components/UserRelatedConcerts";
 import GenericInfosHome from "./components/GenericHomepage";
 import ConcertInfo from "./components/ConcertInfo.js";
+import TestPage from "./components/Test";
 
 class App extends Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class App extends Component {
             <Route path="/similar-artist" component={UserRelatedConcerts} />
             <Route path="/concert-info/:concertId" component={ConcertInfo} />
             <Route path="/generic" component={GenericInfosHome} />
+            <Route path="/test" component={TestPage} />
             <Route component={NotFound} />
           </Switch>
         </div>
