@@ -27,7 +27,7 @@
   margin: 10%;
   padding: 10px 0 20px;
   border: none;
-  border-radius: 30px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,7 @@
   color: #242424;
   margin: 5%;
   padding: 5% 0;
-  border-radius: 10px;
+  border-radius: 5px;
   position: absolute;
   top: 80vh;
   min-height: 380px;
@@ -60,7 +60,7 @@
   height: 75px;
   background-image: url("https://picsum.photos/500/300/?random");
   background-size: cover;
-  border-radius: 10px;
+  border-radius: 5px;
   flex-wrap: nowrap;
   flex-shrink: 0;
   min-width: 100px;

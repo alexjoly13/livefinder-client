@@ -28,11 +28,11 @@ class TopArtists extends Component {
     const { topArtists } = this.state;
     console.log(topArtists);
     return (
-      <section className="TopArtists">
-        <h1>Your next recommended concerts.</h1>
-        {/* <h2>Just for your</h2> */}
-        <span>\\\\\\\\\\\\\\</span>
+      <section className="TopArtists off-grid-section">
+        <h3>Your next recommended concerts.</h3>
+
         <p>Check out the next live from your favorite top artists list.</p>
+        <hr className="small-hr" />
         <div>
           {console.log("hello top artist", topArtists)}
           {topArtists.map(oneArtist => {
@@ -56,16 +56,15 @@ class TopArtists extends Component {
                     return (
                       <div key={oneEvent.displayName}>
                         <div className="inline-card">
-                          <div>
-                            <p>
-                              <span className="outline-text">
-                                {oneEvent.type}
-                              </span>
-                            </p>
+                          <span className="outline-text">{oneEvent.type}</span>
+                          <span className="card-btn">{/* <Link to />+ */}</span>
+
+                          <div className="card-text">
                             <Link to={getConcertAddress(oneEvent)}>
+                              <h4>{oneEvent.venue.displayName}</h4>
+                              <hr />
                               <h3>{oneEvent.displayName}</h3>
                             </Link>
-                            <h4>{oneEvent.venue.displayName}</h4>
                           </div>
                         </div>
                       </div>
@@ -76,7 +75,7 @@ class TopArtists extends Component {
             );
           })}
         </div>
-        <small> see more</small>
+        {/* <small> see more</small> */}
       </section>
     );
   }
