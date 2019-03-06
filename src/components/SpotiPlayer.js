@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { spotiPlayer } from "../api.js";
 
-function spliceToArray(array) {
+function sliceToArray(array) {
   const randomNumber = Math.floor(Math.random() * 16) + 1;
   const secondNumber = randomNumber + 3;
   console.log(randomNumber, secondNumber);
-  return array.splice(randomNumber, secondNumber);
+  return array.slice(randomNumber, secondNumber);
 }
 
 class SpotiPlayer extends Component {
@@ -24,7 +24,8 @@ class SpotiPlayer extends Component {
 
   render() {
     const { relatedArtists } = this.state;
-    const spotArray = spliceToArray(relatedArtists);
+    console.log(relatedArtists.length);
+    const spotArray = sliceToArray(relatedArtists);
     console.log(spotArray);
     return (
       <section>
@@ -40,8 +41,8 @@ class SpotiPlayer extends Component {
                 <iframe
                   src={artistUrl}
                   width="300"
-                  height="380"
-                  frameBorder="0"
+                  height="80"
+                  frameBorder="10"
                   allowtransparency="true"
                   allow="encrypted-media"
                 />
