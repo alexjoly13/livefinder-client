@@ -16,7 +16,8 @@ class Connected extends Component {
     this.state = {
       topArtists: [],
       topArtistName: [],
-      concertArray: []
+      concertArray: [],
+      currentUser: { concert: [] }
     };
   }
 
@@ -45,9 +46,9 @@ class Connected extends Component {
   }
 
   render() {
-    // const { currentUser } = this.props;
+    const { currentUser } = this.props;
     // const { topArtist } = this.state;
-    // console.log("loooooooooool :", currentUser);
+    console.log("loooooooooool :", currentUser);
 
     if (!this.props.currentUser) {
       return <p>Loading...</p>;
@@ -78,7 +79,7 @@ class Connected extends Component {
         </header>
 
         <TopArtistsLive />
-        <AttendingEvent />
+        <AttendingEvent {...this.props} />
         <UserRelatedConcerts />
         <TopFrenchPage />
         <NavLink to="/">

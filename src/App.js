@@ -10,6 +10,7 @@ import GenericInfosHome from "./components/GenericHomepage";
 import ConcertInfo from "./components/ConcertInfo.js";
 import Dashboard from "./components/user-dashboard";
 import SpotiPlayer from "./components/SpotiPlayer.js";
+import AttendingEvent from "./components/AttendingEvent";
 
 class App extends Component {
   constructor(props) {
@@ -63,8 +64,14 @@ class App extends Component {
             <Route path="/spotiPlayer" component={SpotiPlayer} />
             <Route path="/generic" component={GenericInfosHome} />
             <Route
+              path="/attending-event"
+              render={() => (
+                <AttendingEvent currentUser={this.state.currentUser} />
+              )}
+            />
+            <Route
               path="/user-dashboard"
-              render={() => <Dashboard userData={this.state.currentUser} />}
+              render={() => <Dashboard currentUser={this.state.currentUser} />}
             />
             <Route component={NotFound} />
           </Switch>
