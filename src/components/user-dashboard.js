@@ -13,17 +13,16 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    const { userData } = this.props;
-    this.setState({ currentUser: userData });
+    const { currentUser } = this.props;
+    this.setState({ currentUser: currentUser });
   }
 
   render() {
     const { currentUser } = this.state;
     return (
       <section>
+        <img src={currentUser.image} />
         <h2>Hello, {currentUser.fullName}</h2>
-        <h3>{currentUser._id}</h3>
-        <p>This is your dashboard</p>
         <p>
           We display for you some of the informations regarding your account
         </p>
