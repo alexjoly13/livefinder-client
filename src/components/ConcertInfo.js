@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { concertInfo } from "../api.js";
 import { addConcert } from "../api.js";
 
+import "./ConcertInfo.css";
+
 class ConcertInfo extends Component {
   constructor(props) {
     super(props);
@@ -29,10 +31,10 @@ class ConcertInfo extends Component {
     event.preventDefault();
     const { params } = this.props.match;
 
-    console.log(params);
+    // console.log(params);
 
     addConcert(params.concertId).then(response => {
-      console.log("concert added", response.data);
+      // console.log("concert added", response.data);
     });
   }
 
@@ -42,12 +44,40 @@ class ConcertInfo extends Component {
     console.log("concert INFO ------", concert);
     console.log("Artist name :", artistName);
     return (
-      <section>
-        <h2>Concert Info</h2>
-        <p>{concert.displayName}</p>
-        <p>{concert.performance[0].displayName}</p>
-        <p>{concert.location.city}</p>
-        <button onClick={event => this.handleSubmit(event)}>ATTENDING</button>
+      <section className="ConcertInfo">
+        <header className="Header">
+          <h1>Next live for {concert.performance[0].displayName}</h1>
+          <span>\\\\\\\\\\\\\\</span>
+          <p>{concert.displayName}</p>
+        </header>
+        <div className="inline-small-carousel">
+          <div className="inline-small-card" />
+          <div className="inline-small-card" />
+          <div className="inline-small-card" />
+          <div className="inline-small-card" />
+          <div className="inline-small-card" />
+          <div className="inline-small-card" />
+          <div className="inline-small-card" />
+          <div className="inline-small-card" />
+        </div>
+
+        <div className="concert-card">
+          <h4>{concert.venue.displayName}</h4>
+          <hr />
+          <h3>{concert.displayName}</h3>
+          {/* <p>{concert.performance[0].displayName}</p> */}
+          <p>
+            {concert.venue.street}, {concert.venue.zip}
+          </p>
+          <p>
+            {concert.location.country}
+            {concert.location.city}.
+          </p>
+          {/* <p>{concert}</p> */}
+          <button onClick={event => this.handleSubmit(event)}>
+            <h3>ATTENDING</h3>
+          </button>
+        </div>
       </section>
     );
   }

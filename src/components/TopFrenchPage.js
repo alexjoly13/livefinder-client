@@ -1,6 +1,11 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./TopFrenchPage.css";
 import { getTopFrench } from "../api.js";
+
+function getConcertAddress(concert) {
+  return `/concert-info/${concert.id}`;
+}
 
 class TopFrenchPage extends Component {
   constructor(props) {
@@ -24,10 +29,10 @@ class TopFrenchPage extends Component {
     const { topFrenchArtists } = this.state;
     return (
       <section>
-        <h1>Trending lives around you.</h1>
-        {/* <h2>Just for your</h2> */}
-        <span>\\\\\\\\\\\\\\</span>
+        <h3>Trending lives around you.</h3>
+
         <p>Discover which bands are trenging right now around you.</p>
+        <hr className="small-hr" />
         <div>
           {topFrenchArtists.map(oneArtist => {
             return (
@@ -49,7 +54,9 @@ class TopFrenchPage extends Component {
                               {oneEvent.type}
                             </span>
                             <h4>{oneEvent.venue.displayName}</h4>
-                            <h3>{oneEvent.displayName}</h3>
+                            <Link to={getConcertAddress(oneEvent)}>
+                              <h3>{oneEvent.displayName}</h3>
+                            </Link>
                           </div>
                         </div>
                       </div>

@@ -58,3 +58,6 @@ export function getArtistInfos() {
 export function getTest() {
   return backendApi.get("/test").catch(errorHandler);
 }
+export function spotiPlayer() {
+  return backendApi.get("/spotiPlayer").catch(errorHandler);
+}

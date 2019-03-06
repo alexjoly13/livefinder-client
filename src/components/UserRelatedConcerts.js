@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { getRelatedConcerts } from "../api.js";
 
 import "./UserRelatedConcerts.css";
+import { Link } from "react-router-dom";
+function getConcertAddress(concert) {
+  return `/concert-info/${concert.id}`;
+}
 
 class UserRelatedConcerts extends Component {
   constructor(props) {
@@ -26,23 +30,51 @@ class UserRelatedConcerts extends Component {
     const { artistConcerts } = this.state;
     return (
       <section className="TopArtists">
-        <h1>You may also like.</h1>
-        <span>\\\\\\\\\\\\\\</span>
-        <p>Here are some Concerts we think you might enjoy</p>
+        <h3>You may also like.</h3>
+
+        <p>Discover some concerts we think you might enjoy</p>
+        <hr className="small-hr" />
 
         <div>
           {artistConcerts.map(oneArtist => {
             return (
-              <div className="column-card">
+              <div className="inline-carousel">
                 {oneArtist.resultsPage.results.event.map(oneEvent => {
-                  console.log("hello aaaaaaaaaaaaaaaaa", oneEvent);
+                  // console.log("hello aaaaaaaaaaaaaaaaa", oneEvent);
                   return (
                     <div>
-                      {/* <p>
-                        <span className="outline-text">{oneEvent.type}</span>
-                        </p>
-                      <h4>{oneEvent.venue.displayName}</h4> */}
-                      <h3>{oneEvent.performance[0].displayName}</h3>
+                      <div className="inline-small-card">
+                        <div>
+                          <p>hello</p>
+                        </div>
+                        <div>
+                          <p>
+                            <span className="outline-text">
+                              {oneEvent.type}
+                            </span>
+                          </p>
+                          <h4>{oneEvent.venue.displayName}</h4>
+                          <Link to={getConcertAddress(oneEvent)}>
+                            <h3>{oneEvent.performance[0].displayName}</h3>
+                          </Link>
+                        </div>
+                      </div>
+                      <div className="inline-small-card">
+                        <div>
+                          <p>hello</p>
+                        </div>
+                        <div>
+                          <p>
+                            <span className="outline-text">
+                              {oneEvent.type}
+                            </span>
+                          </p>
+                          <h4>{oneEvent.venue.displayName}</h4>
+                          <Link to={getConcertAddress(oneEvent)}>
+                            <h3>{oneEvent.performance[0].displayName}</h3>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   );
                 })}

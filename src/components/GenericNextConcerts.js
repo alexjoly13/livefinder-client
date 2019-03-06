@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./GenericNextConcerts.css";
 import { nextConcertsParis } from "../api";
-import ArtistDetails from "./ArtistPage";
 
 function getConcertAddress(concert) {
   return `/concert-info/${concert.id}`;
@@ -32,21 +31,24 @@ class NextConcertsParis extends Component {
     console.log(concertsParis);
     return (
       <section className="NextConcertsParis">
-        <h3>Upcoming Concerts in Paris</h3>
-        {concertsParis.map(oneConcert => {
-          return (
-            <div>
-              <Link to={getConcertAddress(oneConcert)}>
-                <h3>{oneConcert.displayName}</h3>
-              </Link>
-              <p>{oneConcert.type}</p>
-              <p>{oneConcert.venue.displayName}</p>
-              <ArtistDetails
-                artistName={oneConcert.performance[0].artist.displayName}
-              />
-            </div>
-          );
-        })}
+        <h1>Next Concerts in Paris</h1>
+
+        <span>\\\\\\\\\\\\\\</span>
+        <p>See the upcomming event in Paris</p>
+        <div className="column-card-flex">
+          {concertsParis.map(oneConcert => {
+            return (
+              <div className="column-card">
+                <Link to={getConcertAddress(oneConcert)}>
+                  <h3>{oneConcert.displayName}</h3>
+                  <hr className="small-hr" />
+                </Link>
+                <p>{oneConcert.type}</p>
+                <p>{oneConcert.venue.displayName}</p>
+              </div>
+            );
+          })}
+        </div>
       </section>
     );
   }

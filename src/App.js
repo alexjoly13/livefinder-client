@@ -9,6 +9,9 @@ import UserRelatedConcerts from "./components/UserRelatedConcerts";
 import GenericInfosHome from "./components/GenericHomepage";
 import ConcertInfo from "./components/ConcertInfo.js";
 import TestPage from "./components/Test";
+import Dashboard from "./components/user-dashboard";
+import SpotiPlayer from "./components/SpotiPlayer.js";
+import AttendingEvent from "./components/AttendingEvent";
 
 class App extends Component {
   constructor(props) {
@@ -33,9 +36,13 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser } = this.state;
     return (
       <section className="App">
+        {/* <header>
+          <nav>
+          
+          </nav>
+        </header> */}
         <div className="body">
           <Switch>
             <Route exact path="/" component={HomePage} />
@@ -55,19 +62,31 @@ class App extends Component {
             <Route path="/top-french" component={TopFrenchPage} />
             <Route path="/similar-artist" component={UserRelatedConcerts} />
             <Route path="/concert-info/:concertId" component={ConcertInfo} />
+            <Route path="/spotiPlayer" component={SpotiPlayer} />
             <Route path="/generic" component={GenericInfosHome} />
             <Route path="/test" component={TestPage} />
+            <Route
+              path="/attending-event"
+              render={() => (
+                <AttendingEvent currentUser={this.state.currentUser} />
+              )}
+            />
+            <Route
+              path="/user-dashboard"
+              render={() => <Dashboard currentUser={this.state.currentUser} />}
+            />
             <Route component={NotFound} />
           </Switch>
         </div>
         <footer>
-          <NavLink to="/">Home Page</NavLink>
+          <NavLink to="/connected">Home Page</NavLink>
           <NavLink to="/top-french">
             <button>Go to French Selection</button>
           </NavLink>
           <NavLink to="/similar-artist">
             <button>Our selection of similar concerts for you</button>
           </NavLink>
+          <NavLink to="/user-dashboard">Your Dashboard</NavLink>
           <p>
             Made with{" "}
             <span role="img" aria-label="guitar">

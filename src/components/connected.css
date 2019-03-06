@@ -1,18 +1,28 @@
 .profilPic {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
+}
+
+.img-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
 }
 
 /* HEADER FOR APP ONLY */
 
 .Connected .Header {
-  height: 50vh;
+  height: 30vh;
   background-image: linear-gradient(
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.2) 50%
+      rgba(255, 127, 80, 0.4) 0%,
+      rgba(255, 127, 80, 0.4) 50%
     ),
-    url("https://images.unsplash.com/46/unsplash_52c319226cefb_1.JPG?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80");
+    url("https://picsum.photos/500/500/?random");
 
   background-size: cover;
   background-attachment: fixed;
@@ -20,23 +30,28 @@
 }
 
 .Connected .header-text {
+  background-color: white;
+  border-radius: 5px;
+  margin: 20% 10% 10% 10%;
+  padding-bottom: 50px;
+  color: #242424;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
   position: absolute;
-  bottom: 20%;
-  left: 5%;
 }
 
-.Connected .section-2 {
+.Connected .AttendingEvent {
   /* height: 50vh; */
   background-image: linear-gradient(
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.2) 50%
+      rgba(255, 127, 80, 0.5) 0%,
+      rgba(255, 127, 80, 0.4) 50%
     ),
-    url("https://images.unsplash.com/photo-1534267117118-03b102215c8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80");
+    url("https://picsum.photos/500/500/?random");
   background-size: cover;
   background-attachment: fixed;
   padding: 5% 0;
+  color: white;
 }
-.Connected .section-2 h1 {
+.Connected .AttendingEvent h1 {
   padding-right: 10%;
 }
 
@@ -54,7 +69,7 @@
     rgba(125, 157, 185, 1) 100%
   );
 
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
