@@ -51,3 +51,7 @@ export function genericInfos() {
 export function nextConcertsParis() {
   return backendApi.get("/concerts-paris").catch(errorHandler);
 }
+
+export function spotiPlayer() {
+  return backendApi.get("/spotiPlayer").catch(errorHandler);
+}
