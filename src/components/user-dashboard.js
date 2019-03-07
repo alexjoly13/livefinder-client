@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { userDashboard } from "../api.js";
+import { deleteConcert } from "../api.js";
 import SpotiPlayer from "./SpotiPlayer.js";
 import Nav from "./nav.js";
 function getConcertAddress(concert) {
@@ -8,20 +8,14 @@ function getConcertAddress(concert) {
 }
 
 class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentUser: { concert: [] }
-    };
-  }
-
-  componentDidMount() {
-    const { currentUser } = this.props;
-    this.setState({ currentUser: currentUser });
+  handleSubmit(concert) {
+    deleteConcert(concert.id).then(response => {
+      this.props.onConcertDelete(response.data);
+    });
   }
 
   render() {
-    const { currentUser } = this.state;
+    const { currentUser } = this.props;
     return (
       <section>
         <header className="Header padding-top">

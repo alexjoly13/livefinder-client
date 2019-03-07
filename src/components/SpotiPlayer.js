@@ -4,7 +4,6 @@ import { spotiPlayer } from "../api.js";
 function sliceToArray(array) {
   const randomNumber = Math.floor(Math.random() * 16) + 1;
   const secondNumber = randomNumber + 3;
-  console.log(randomNumber, secondNumber);
   return array.slice(randomNumber, secondNumber);
 }
 
@@ -24,9 +23,7 @@ class SpotiPlayer extends Component {
 
   render() {
     const { relatedArtists } = this.state;
-    console.log(relatedArtists.length);
     const spotArray = sliceToArray(relatedArtists);
-    console.log(spotArray);
     return (
       <section>
         <h3>Discover some Artists with us</h3>

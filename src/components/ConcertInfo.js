@@ -16,6 +16,7 @@ class ConcertInfo extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props);
     const { params } = this.props.match;
     concertInfo(params.concertId).then(response => {
       const lastfmData = this.state.lastfm;
@@ -33,10 +34,8 @@ class ConcertInfo extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const { params } = this.props.match;
-
-    // console.log(params);
-
     addConcert(params.concertId).then(response => {
+      this.props.addConcertToUser(response.data);
       this.setState({ isSubmitSuccessful: true });
     });
   }
