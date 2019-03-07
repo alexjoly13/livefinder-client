@@ -35,13 +35,9 @@ class App extends Component {
   }
 
   render() {
+    const { currentUser } = this.state;
     return (
       <section className="App">
-        {/* <header>
-          <nav>
-          
-          </nav>
-        </header> */}
         <div className="body">
           <Switch>
             <Route exact path="/" component={HomePage} />
