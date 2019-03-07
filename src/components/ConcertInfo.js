@@ -136,21 +136,6 @@ class ConcertInfo extends Component {
             <h3>ATTENDING</h3>
           </button>
         </div>
-        {/* <header className="Header">
-          <h1>Next live for {songkick[0].displayName}</h1>
-          <span>\\\\\\\\\\\\\\</span>
-          <p>{concert.displayName}</p>
-        </header> */}
-        {/* <div className="inline-small-carousel">
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-        </div> */}
       </section>
     );
   }

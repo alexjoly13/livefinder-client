@@ -54,21 +54,31 @@
   flex-shrink: 0;
   min-width: 100px;
   margin-left: 15px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
 
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+.inline-small-card h4 {
+  margin: 10% 0;
+  background-size: cover;
+  border-radius: 5px;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  min-width: 100px;
+  margin-left: 15px;
 }
 
 .inline-small-card img {
   border-radius: 0 0 5px 5px;
   height: 200px;
   z-index: 6;
-  margin-bottom: 0%;
+  margin-bottom: -5px;
 }
 
 .artist-header {
   width: 80%;
   margin: 15vh 10%;
   background-color: white;
+  border-radius: 5px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   text-align: center;
