@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { userDashboard } from "../api.js";
+import SpotiPlayer from "./SpotiPlayer.js";
 function getConcertAddress(concert) {
   return `/concert-info/${concert.id}`;
 }
@@ -39,6 +40,8 @@ class Dashboard extends Component {
             );
           })}
         </ul>
+        <h2>Discover some Artists with us:</h2>
+        <SpotiPlayer {...this.props} />
       </section>
     );
   }
