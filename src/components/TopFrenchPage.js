@@ -28,12 +28,14 @@ class TopFrenchPage extends Component {
   render() {
     const { topFrenchArtists } = this.state;
     return (
-      <section>
-        <h3>Trending lives around you.</h3>
+      <section className="desktop-cards-section">
+        <div className="desktop-card-heading flex-item1">
+          <h3>Trending lives around you.</h3>
 
-        <p>Discover which bands are trenging right now around you.</p>
-        <hr className="small-hr" />
-        <div>
+          <p>Discover which bands are trenging right now around you.</p>
+          <hr className="small-hr" />
+        </div>
+        <div className="flex-item2">
           {topFrenchArtists.map(oneArtist => {
             return (
               <div>
@@ -44,7 +46,7 @@ class TopFrenchPage extends Component {
                       .displayName
                   }
                 </h3>
-                <div className="inline-carousel">
+                <div className="inline-carousel desktop-caroussel">
                   {oneArtist.resultsPage.results.event.map(oneEvent => {
                     return (
                       <div key={oneEvent.displayName}>

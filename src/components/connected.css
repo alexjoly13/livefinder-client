@@ -32,8 +32,9 @@
 .Connected .header-text {
   background-color: white;
   border-radius: 5px;
-  margin: 20% 10% 10% 10%;
+  margin: 15vh 10% 10% 10%;
   padding-bottom: 50px;
+  width: 80%;
   color: #242424;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
   position: absolute;
@@ -42,13 +43,14 @@
 .Connected .AttendingEvent {
   /* height: 50vh; */
   background-image: linear-gradient(
-      rgba(255, 127, 80, 0.5) 0%,
-      rgba(255, 127, 80, 0.4) 50%
+      rgba(255, 127, 80, 0.8) 0%,
+      rgba(255, 127, 80, 0.8) 50%
     ),
     url("https://picsum.photos/500/500/?random");
   background-size: cover;
   background-attachment: fixed;
-  padding: 5% 0;
+  padding: 5%;
+  margin: 0 5%;
   color: white;
 }
 .Connected .AttendingEvent h1 {
@@ -58,27 +60,34 @@
 /* SMALL CARDS FOR SEC 2 */
 
 .Connected .small-card {
-  width: 35%;
+  width: 40%;
   max-width: 200px;
-  padding: 20px 20px;
+  height: 200px;
+  padding: 10px 10px;
   margin: 3% 0;
   background-image: linear-gradient(
-    135deg,
-    rgba(88, 245, 146, 1) 0%,
-    rgba(91, 181, 159, 1) 50%,
-    rgba(125, 157, 185, 1) 100%
-  );
+      rgba(0, 40, 250, 0.4) 0%,
+      rgba(0, 40, 250, 0.4) 80%
+    ),
+    url("https://picsum.photos/500/300/?random");
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 
   border-radius: 5px;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 .Connected .flex-small-cards {
-  margin: 5%;
+  margin: 5% 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   /* align-content: flex-start; */
 }
+
+/* .small-card h3,
+p {
+  margin: 0;
+  padding: 0;
+} */

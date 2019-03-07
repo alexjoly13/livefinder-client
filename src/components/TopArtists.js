@@ -28,11 +28,13 @@ class TopArtists extends Component {
     const { topArtists } = this.state;
     console.log(topArtists);
     return (
-      <section className="TopArtists off-grid-section">
-        <h3>Your next recommended concerts.</h3>
+      <section className="TopArtists off-grid-section desktop-cards-section">
+        <div className="desktop-card-heading">
+          <h3>Your next recommended concerts.</h3>
 
-        <p>Check out the next live from your favorite top artists list.</p>
-        <hr className="small-hr" />
+          <p>Check out the next live from your favorite top artists list.</p>
+          <hr className="small-hr" />
+        </div>
         <div>
           {console.log("hello top artist", topArtists)}
           {topArtists.map(oneArtist => {
@@ -50,8 +52,7 @@ class TopArtists extends Component {
                       .displayName
                   }
                 </h3>
-                {/* {console.log("hello one artist", response.data)} */}
-                <div className="inline-carousel">
+                <div className="inline-carousel desktop-caroussel">
                   {oneArtist.resultsPage.results.event.map(oneEvent => {
                     return (
                       <div key={oneEvent.displayName}>
