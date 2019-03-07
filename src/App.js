@@ -8,6 +8,7 @@ import TopFrenchPage from "./components/TopFrenchPage";
 import UserRelatedConcerts from "./components/UserRelatedConcerts";
 import GenericInfosHome from "./components/GenericHomepage";
 import ConcertInfo from "./components/ConcertInfo.js";
+import TestPage from "./components/Test";
 import Dashboard from "./components/user-dashboard";
 import SpotiPlayer from "./components/SpotiPlayer.js";
 import AttendingEvent from "./components/AttendingEvent";
@@ -59,6 +60,7 @@ class App extends Component {
             <Route path="/concert-info/:concertId" component={ConcertInfo} />
             <Route path="/spotiPlayer" component={SpotiPlayer} />
             <Route path="/generic" component={GenericInfosHome} />
+            <Route path="/test" component={TestPage} />
             <Route
               path="/attending-event"
               render={() => (

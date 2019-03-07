@@ -52,6 +52,12 @@ export function nextConcertsParis() {
   return backendApi.get("/concerts-paris").catch(errorHandler);
 }
 
+export function getArtistInfos() {
+  return backendApi.get(`/artist`).catch(errorHandler);
+}
+export function getTest() {
+  return backendApi.get("/test").catch(errorHandler);
+}
 export function spotiPlayer() {
   return backendApi.get("/spotiPlayer").catch(errorHandler);
 }

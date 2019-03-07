@@ -21,14 +21,14 @@ class NextConcertsParis extends Component {
       .then(response => {
         // console.log(response.data);
         this.setState({
-          concertsParis: response.data.resultsPage.results.event
+          concertsParis: response.data
         });
       });
   }
 
   render() {
     const { concertsParis } = this.state;
-    // console.log(concertsParis);
+    console.log(concertsParis);
     return (
       <section className="NextConcertsParis">
         <h1>Next Concerts in Paris</h1>
