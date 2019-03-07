@@ -48,11 +48,11 @@ class ConcertInfo extends Component {
     ) : (
       <section className="ConcertInfo">
         <header className="Header">
-          <h1>Next live for {concert.performance[0].displayName}</h1>
+          {/* <h1>Next live for {concert.performance[0].displayName}</h1>
           <span>\\\\\\\\\\\\\\</span>
-          <p>{concert.displayName}</p>
+          <p>{concert.displayName}</p> */}
         </header>
-        <div className="inline-small-carousel">
+        {/* <div className="inline-small-carousel">
           <div className="inline-small-card" />
           <div className="inline-small-card" />
           <div className="inline-small-card" />
@@ -61,7 +61,7 @@ class ConcertInfo extends Component {
           <div className="inline-small-card" />
           <div className="inline-small-card" />
           <div className="inline-small-card" />
-        </div>
+        </div> */}
 
         <div className="concert-card">
           <h4>{concert.venue.displayName}</h4>

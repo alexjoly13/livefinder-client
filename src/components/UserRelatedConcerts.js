@@ -30,7 +30,7 @@ class UserRelatedConcerts extends Component {
     const { artistConcerts } = this.state;
 
     return (
-      <section className="TopArtists">
+      <section className="">
         <h3>You may also like.</h3>
 
         <p>Discover some concerts we think you might enjoy</p>
@@ -59,7 +59,7 @@ class UserRelatedConcerts extends Component {
                         </div>
 
                         <div className="text-thin-card">
-                          <p>{oneEvent.venue.displayName}</p>
+                          <h4>{oneEvent.venue.displayName}</h4>
                           {/* <hr className="" /> */}
                           <Link to={getConcertAddress(oneEvent)}>
                             <h3>{oneEvent.performance[0].displayName}</h3>

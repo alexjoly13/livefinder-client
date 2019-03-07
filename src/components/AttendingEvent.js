@@ -30,9 +30,21 @@ class AttendingEvent extends Component {
             {currentUser.concert.map(oneEvent => {
               return (
                 <div className="small-card">
-                  <Link to={getConcertAddress(oneEvent)}>
-                    <h3>{oneEvent.performance[0].displayName}</h3>
-                  </Link>
+                  <div className="small-card-text">
+                    <div className="small-card-date">
+                      <p>
+                        {oneEvent.start.date.slice(5, 7)}/
+                        {oneEvent.start.date.slice(8)}{" "}
+                      </p>
+                      <p>{oneEvent.venue.displayName}</p>
+                    </div>
+                    <div>
+                      {/* <hr className="" /> */}
+                      <Link to={getConcertAddress(oneEvent)}>
+                        <h3>{oneEvent.performance[0].displayName}</h3>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               );
             })}
