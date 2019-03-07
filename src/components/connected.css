@@ -14,32 +14,6 @@
   padding-bottom: 20px;
 }
 
-/* HEADER FOR APP ONLY */
-
-.Connected .Header {
-  height: 30vh;
-  background-image: linear-gradient(
-      rgba(255, 127, 80, 0.4) 0%,
-      rgba(255, 127, 80, 0.4) 50%
-    ),
-    url("https://picsum.photos/500/500/?random");
-
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
-}
-
-.Connected .header-text {
-  background-color: white;
-  border-radius: 5px;
-  margin: 15vh 10% 10% 10%;
-  padding-bottom: 50px;
-  width: 80%;
-  color: #242424;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-  position: absolute;
-}
-
 .Connected .AttendingEvent {
   /* height: 50vh; */
   background-image: linear-gradient(
@@ -84,6 +58,17 @@
   align-items: center;
   justify-content: space-around;
   /* align-content: flex-start; */
+}
+
+.outline-text-black {
+  background-color: white;
+  color: silver;
+  padding: 5px 10px;
+  border: 1px solid silver;
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 /* .small-card h3,

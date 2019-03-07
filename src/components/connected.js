@@ -9,6 +9,7 @@ import "./connected.css";
 import UserRelatedConcerts from "./UserRelatedConcerts";
 import TopFrenchPage from "./TopFrenchPage";
 import AttendingEvent from "./AttendingEvent";
+import Nav from "./nav";
 
 class Connected extends Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class Connected extends Component {
     return (
       <section className="Connected">
         <header className="Header">
+          <Nav />
           <div className="header-card">
             <div className="header-text">
               <div className="img-flex">
@@ -73,7 +75,16 @@ class Connected extends Component {
                 Check out the next live bands arround, any trending concerts
                 arround any more.
               </p>
-              <small>profile -></small>
+              <small>
+                <NavLink to="/">
+                  <button
+                    className="outline-text-black"
+                    onClick={() => this.logoutClick()}
+                  >
+                    Log Out
+                  </button>
+                </NavLink>
+              </small>
             </div>
           </div>
         </header>
@@ -82,9 +93,6 @@ class Connected extends Component {
         <AttendingEvent {...this.props} />
         <UserRelatedConcerts {...this.props} />
         <TopFrenchPage {...this.props} />
-        <NavLink to="/">
-          <button onClick={() => this.logoutClick()}>Log Out</button>
-        </NavLink>
       </section>
     );
   }

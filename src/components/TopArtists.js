@@ -28,7 +28,7 @@ class TopArtists extends Component {
     const { topArtists } = this.state;
     console.log(topArtists);
     return (
-      <section className="TopArtists off-grid-section desktop-cards-section">
+      <section className="padding-top off-grid-section desktop-cards-section">
         <div className="desktop-card-heading">
           <h3>Your next recommended concerts.</h3>
 

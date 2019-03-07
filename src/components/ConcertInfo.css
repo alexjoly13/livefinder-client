@@ -1,12 +1,9 @@
 .ConcertInfo {
+  /* background-color: chartreuse; */
   min-height: 100vh;
   margin: 0;
   /* padding-bottom: 5%; */
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.2) 50%
-    ),
-    url("https://images.unsplash.com/46/unsplash_52c319226cefb_1.JPG?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80");
+
   background-attachment: fixed;
 }
 
@@ -15,7 +12,7 @@
   /* position: fixed; */
 }
 
-/* .ConcertInfo button {
+.ConcertInfo button {
   color: blue;
   border: 2px solid blue;
   background-color: white;
@@ -25,7 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+}
 
 .concert-card {
   background-color: white;
@@ -39,27 +36,82 @@
 }
 
 /* PHOTO CAROUSSEL DISPLAY */
-/* .inline-small-carousel {
-  padding-top: 55vh;
+.inline-small-carousel {
+  /* padding-top: 55vh; */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: auto;
-  position: fixed;
+  /* position: fixed; */
   margin-left: 0;
 }
 
 .inline-small-card {
-  margin: 0;
-  height: 75px;
-  background-image: url("https://picsum.photos/500/300/?random");
+  margin: 10% 0;
   background-size: cover;
   border-radius: 5px;
   flex-wrap: nowrap;
   flex-shrink: 0;
   min-width: 100px;
-  width: 20%;
-  min-height: 100px;
-  height: 20vh;
   margin-left: 15px;
-} */
+
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.inline-small-card img {
+  border-radius: 0 0 5px 5px;
+  height: 200px;
+  z-index: 6;
+  margin-bottom: 0%;
+}
+
+.artist-header {
+  width: 80%;
+  margin: 15vh 10%;
+  background-color: white;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+  z-index: 5;
+}
+
+.artist-header img {
+  width: 200px;
+  height: 200px;
+  margin-top: -50px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  z-index: 6;
+}
+
+.genre-sec {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10% 0;
+}
+
+.genre-sec > div {
+  background-color: tomato;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin: 2%;
+  width: 35%;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.summary {
+  word-wrap: break-word;
+}
+
+.bk-img {
+  width: 100%;
+  z-index: 3;
+  filter: blur(5px);
+  position: absolute;
+  top: 0;
+}
