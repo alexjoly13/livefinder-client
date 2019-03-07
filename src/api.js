@@ -69,3 +69,7 @@ export function userDashboard() {
 export function deleteConcert(concertId) {
   return backendApi.delete(`/delete-concert/${concertId}`).catch(errorHandler);
 }
+
+export function getTopPlaylist() {
+  return backendApi.get("/get-top-playlist").catch(errorHandler);
+}
