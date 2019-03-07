@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { concertInfo } from "../api.js";
 import { addConcert } from "../api.js";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 import "./ConcertInfo.css";
 
@@ -43,42 +43,11 @@ class ConcertInfo extends Component {
   render() {
     const { artistName } = this.state;
     const { concert } = this.state;
+    // console.log("looooooooooooooool", concert);
     return this.state.isSubmitSuccessful ? (
       <Redirect to="/connected" />
     ) : (
-      <section className="ConcertInfo">
-        <header className="Header">
-          {/* <h1>Next live for {concert.performance[0].displayName}</h1>
-          <span>\\\\\\\\\\\\\\</span>
-          <p>{concert.displayName}</p> */}
-        </header>
-        {/* <div className="inline-small-carousel">
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-        </div> */}
-
-        <div className="concert-card">
-          <h4>{concert.venue.displayName}</h4>
-          <hr />
-          <h3>{concert.displayName}</h3>
-          <p>
-            {concert.venue.street}, {concert.venue.zip}
-          </p>
-          <p>
-            {concert.location.country}
-            {concert.location.city}.
-          </p>
-          <button onClick={event => this.handleSubmit(event)}>
-            <h3>ATTENDING</h3>
-          </button>
-        </div>
-      </section>
+      <section className="ConcertInfo" />
     );
   }
 }

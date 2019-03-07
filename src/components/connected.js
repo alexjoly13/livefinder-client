@@ -56,6 +56,7 @@ class Connected extends Component {
     return (
       <section className="Connected">
         <header className="Header">
+          <nav />
           <div className="header-card">
             <div className="header-text">
               <div className="img-flex">

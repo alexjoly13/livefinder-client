@@ -69,6 +69,7 @@ class App extends Component {
               path="/user-dashboard"
               render={() => <Dashboard currentUser={this.state.currentUser} />}
             />
+
             <Route component={NotFound} />
           </Switch>
         </div>

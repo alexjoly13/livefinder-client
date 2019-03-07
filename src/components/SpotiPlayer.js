@@ -29,7 +29,9 @@ class SpotiPlayer extends Component {
     console.log(spotArray);
     return (
       <section>
-        <h2>SPOTIFY PLAYER</h2>
+        <h3>Discover some Artists with us</h3>
+        <p>Check the Random Players to discover or remember new artists</p>
+        <hr className="small-hr" />
         <ul>
           {spotArray.map(oneArtist => {
             const artistUrl = `https://open.spotify.com/embed/artist/${
