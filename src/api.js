@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const backendApi = axios.create({
-  baseURL: "http://localhost:8888",
+  baseURL: process.env.REACT_APP_BACKEND_URL,
   withCredentials: true
 });
 
@@ -58,4 +58,8 @@ export function spotiPlayer() {
 
 export function userDashboard() {
   return backendApi.get("/dashboard-info").catch(errorHandler);
+}
+
+export function deleteConcert(concertId) {
+  return backendApi.delete(`/delete-concert/${concertId}`).catch(errorHandler);
 }

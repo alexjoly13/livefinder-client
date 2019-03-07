@@ -20,6 +20,7 @@ class ConcertInfo extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props);
     const { params } = this.props.match;
     concertInfo(params.concertId).then(response => {
       this.setState({
@@ -32,36 +33,19 @@ class ConcertInfo extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const { params } = this.props.match;
-
-    // console.log(params);
-
     addConcert(params.concertId).then(response => {
+      this.props.addConcertToUser(response.data);
       this.setState({ isSubmitSuccessful: true });
     });
   }
 
   render() {
-    const { artistName } = this.state;
     const { concert } = this.state;
     return this.state.isSubmitSuccessful ? (
       <Redirect to="/connected" />
     ) : (
       <section className="ConcertInfo">
-        <header className="Header">
-          {/* <h1>Next live for {concert.performance[0].displayName}</h1>
-          <span>\\\\\\\\\\\\\\</span>
-          <p>{concert.displayName}</p> */}
-        </header>
-        {/* <div className="inline-small-carousel">
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-        </div> */}
+        <header className="Header" />
 
         <div className="concert-card">
           <h4>{concert.venue.displayName}</h4>

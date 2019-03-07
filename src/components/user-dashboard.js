@@ -1,26 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { userDashboard } from "../api.js";
+import { deleteConcert } from "../api.js";
 import SpotiPlayer from "./SpotiPlayer.js";
 function getConcertAddress(concert) {
   return `/concert-info/${concert.id}`;
 }
 
 class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentUser: { concert: [] }
-    };
-  }
-
-  componentDidMount() {
-    const { currentUser } = this.props;
-    this.setState({ currentUser: currentUser });
+  handleSubmit(concert) {
+    deleteConcert(concert.id).then(response => {
+      this.props.onConcertDelete(response.data);
+    });
   }
 
   render() {
-    const { currentUser } = this.state;
+    const { currentUser } = this.props;
     return (
       <section>
         <img src={currentUser.image} />
@@ -36,6 +30,9 @@ class Dashboard extends Component {
                 <Link to={getConcertAddress(oneEvent)}>
                   <h3>{oneEvent.displayName}</h3>
                 </Link>
+                <button onClick={() => this.handleSubmit(oneEvent)}>
+                  Delete
+                </button>
               </li>
             );
           })}

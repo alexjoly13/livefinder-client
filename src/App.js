@@ -56,7 +56,16 @@ class App extends Component {
             />
             <Route path="/top-french" component={TopFrenchPage} />
             <Route path="/similar-artist" component={UserRelatedConcerts} />
-            <Route path="/concert-info/:concertId" component={ConcertInfo} />
+            <Route
+              path="/concert-info/:concertId"
+              render={props => (
+                <ConcertInfo
+                  match={props.match}
+                  currentUser={this.state.currentUser}
+                  addConcertToUser={user => this.updateUser(user)}
+                />
+              )}
+            />
             <Route path="/spotiPlayer" component={SpotiPlayer} />
             <Route path="/generic" component={GenericInfosHome} />
             <Route
@@ -67,7 +76,12 @@ class App extends Component {
             />
             <Route
               path="/user-dashboard"
-              render={() => <Dashboard currentUser={this.state.currentUser} />}
+              render={() => (
+                <Dashboard
+                  currentUser={this.state.currentUser}
+                  onConcertDelete={user => this.updateUser(user)}
+                />
+              )}
             />
             <Route component={NotFound} />
           </Switch>

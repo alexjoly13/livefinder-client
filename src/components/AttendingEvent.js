@@ -4,20 +4,8 @@ function getConcertAddress(concert) {
   return `/concert-info/${concert.id}`;
 }
 class AttendingEvent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentUser: { concert: [] }
-    };
-  }
-
-  componentDidMount() {
-    const { currentUser } = this.props;
-    this.setState({ currentUser: currentUser });
-  }
-
   render() {
-    const { currentUser } = this.state;
+    const { currentUser } = this.props;
     console.log(currentUser);
     return (
       <section className="AttendingEvent">
