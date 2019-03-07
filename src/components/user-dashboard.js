@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { userDashboard } from "../api.js";
 import SpotiPlayer from "./SpotiPlayer.js";
+import Nav from "./nav.js";
 function getConcertAddress(concert) {
   return `/concert-info/${concert.id}`;
 }
@@ -24,6 +25,7 @@ class Dashboard extends Component {
     return (
       <section>
         <header className="Header padding-top">
+          <Nav />
           <div className="header-card">
             <div className="header-text">
               <div className="img-flex">

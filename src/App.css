@@ -305,3 +305,40 @@ footer {
 }
 
 /* TESTS */
+
+/* NAV */
+
+.App nav {
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+  margin: 5%;
+}
+
+/* .App nav div:first-child {
+  background-color: blue;
+  color: white;
+}
+.App nav div:last-child {
+  background-color: tomato;
+  color: white;
+} */
+
+.App nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 50px;
+  background-color: white;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.App nav img {
+  width: 25px;
+  height: 20px;
+}

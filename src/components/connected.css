@@ -60,6 +60,17 @@
   /* align-content: flex-start; */
 }
 
+.outline-text-black {
+  background-color: white;
+  color: silver;
+  padding: 5px 10px;
+  border: 1px solid silver;
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 /* .small-card h3,
 p {
   margin: 0;

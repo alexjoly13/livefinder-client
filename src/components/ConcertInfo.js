@@ -56,6 +56,65 @@ class ConcertInfo extends Component {
       <Redirect to="/connected" />
     ) : (
       <section className="ConcertInfo">
+        {lastfm.map(oneArtist => {
+          return (
+            <div>
+              <img
+                className="bk-img"
+                src={this.oneImg(oneArtist.image[4])}
+                alt="artist picto"
+              />
+              <div key={oneArtist.mbid}>
+                <div className="artist-header">
+                  <div className="artist-card">
+                    <img
+                      className=""
+                      src={this.oneImg(oneArtist.image[4])}
+                      alt="artist picto"
+                    />
+                  </div>
+                  <h1>{oneArtist.name}</h1>
+
+                  <h3>Total listeners: {oneArtist.stats.listeners}</h3>
+                </div>
+                <hr className="small-hr" />
+                <h3>Similar Artists.</h3>
+                <div className="inline-small-carousel">
+                  {oneArtist.similar.artist.map(oneSimilarArtist => {
+                    return (
+                      <div
+                        className="inline-small-card"
+                        key={oneSimilarArtist.url}
+                      >
+                        <h4>{oneSimilarArtist.name}</h4>
+                        <img
+                          src={this.oneImg(oneSimilarArtist.image[2])}
+                          alt="artist picto"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+                <hr className="small-hr" />
+                <h3>Genre.</h3>
+                <div className="genre-sec">
+                  {oneArtist.tags.tag.map(oneGenre => {
+                    return (
+                      <div key={oneGenre.url}>
+                        <h5>{oneGenre.name}</h5>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="summary">
+                  <hr className="small-hr" />
+                  <h3>Bio.</h3>
+                  <p>{oneArtist.bio.summary}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
         <div className="concert-card">
           {songkick.map(oneEvent => {
             return (
@@ -93,39 +152,6 @@ class ConcertInfo extends Component {
           <div className="inline-small-card" />
           <div className="inline-small-card" />
         </div> */}
-        {lastfm.map(oneArtist => {
-          return (
-            <div key={oneArtist.mbid}>
-              <h1>{oneArtist.name}</h1>
-
-              <h3>Total listeners: {oneArtist.stats.listeners}</h3>
-              <img src={this.oneImg(oneArtist.image[4])} alt="artist picto" />
-              <h4>
-                Similar Artists:
-                {oneArtist.similar.artist.map(oneSimilarArtist => {
-                  return (
-                    <div key={oneSimilarArtist.url}>
-                      <p>{oneSimilarArtist.name}</p>
-                      <img
-                        src={this.oneImg(oneSimilarArtist.image[1])}
-                        alt="artist picto"
-                      />
-                    </div>
-                  );
-                })}
-                <p>Genre :</p>
-                {oneArtist.tags.tag.map(oneGenre => {
-                  return (
-                    <div key={oneGenre.url}>
-                      <p>{oneGenre.name}</p>
-                    </div>
-                  );
-                })}
-              </h4>
-              <p>{oneArtist.bio.summary}</p>
-            </div>
-          );
-        })}
       </section>
     );
   }
