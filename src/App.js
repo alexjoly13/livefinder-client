@@ -92,21 +92,15 @@ class App extends Component {
           </Switch>
         </div>
         <footer>
-          <NavLink to="/connected">Home Page</NavLink>
+          {/* <NavLink to="/connected">Home Page</NavLink>
           <NavLink to="/top-french">
             <button>Go to French Selection</button>
           </NavLink>
           <NavLink to="/similar-artist">
             <button>Our selection of similar concerts for you</button>
           </NavLink>
-          <NavLink to="/user-dashboard">Your Dashboard</NavLink>
-          <p>
-            Made with{" "}
-            <span role="img" aria-label="guitar">
-              🎸
-            </span>{" "}
-            at Ironhack Paris
-          </p>
+          <NavLink to="/user-dashboard">Your Dashboard</NavLink> */}
+          <p>Made with 🎸 at Ironhack Paris</p>
         </footer>
       </section>
     );

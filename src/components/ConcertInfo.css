@@ -11,11 +11,26 @@
   padding-top: 1px;
   /* position: fixed; */
 }
+.ConcertInfo h1,
+.ConcertInfo h4 {
+  margin: 10%;
+}
 
 .ConcertInfo button {
   color: blue;
   border: 2px solid blue;
   background-color: white;
+  width: 80%;
+  margin: 10%;
+  padding: 10px 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ConcertInfo button:hover {
+  color: white;
+  border: 2px solid blue;
+  background-color: blue;
   width: 80%;
   margin: 10%;
   padding: 10px 0 20px;
@@ -30,9 +45,9 @@
   margin: 5%;
   padding: 5% 0;
   border-radius: 5px;
-  /* position: absolute; */
-  /* top: 50vh; */
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
   min-height: 380px;
+  position: relative;
 }
 
 /* PHOTO CAROUSSEL DISPLAY */
@@ -83,6 +98,7 @@
   position: relative;
   text-align: center;
   z-index: 5;
+  padding-bottom: 5%;
 }
 
 .artist-header img {
@@ -116,12 +132,103 @@
 
 .summary {
   word-wrap: break-word;
+  text-align: justify;
 }
 
 .bk-img {
   width: 100%;
+  max-height: 50vh;
   z-index: 3;
   filter: blur(5px);
   position: absolute;
   top: 0;
+}
+
+.concert-date {
+  border: 1px solid blue;
+  color: blue;
+  padding: 5px 10px;
+  border-radius: 30px;
+  margin: 0;
+  /* position: absolute;
+  top: 5%;
+  right: 10%; */
+  /* margin-left: 55%; */
+}
+
+.concert-place {
+  border: 1px solid tomato;
+  color: tomato;
+  padding: 5px 10px;
+  border-radius: 30px;
+  margin: 0;
+  /* position: absolute;
+  top: 5%;
+  left: 10%; */
+  /* margin-right: 55%; */
+}
+
+/* BTN EFFECT */
+
+.btn {
+  position: relative;
+  color: var(--inv);
+  transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn:before,
+.btn:after {
+  content: "";
+  position: absolute;
+  transition: inherit;
+  z-index: -1;
+}
+
+.btn:hover {
+  color: white;
+  background-color: blue;
+  transition-delay: 0.6s;
+}
+
+.btn:hover:before {
+  transition-delay: 0s;
+}
+
+.btn:hover:after {
+  background: blue;
+  transition-delay: 0.4s;
+}
+
+/* From Top */
+
+.from-top:before,
+.from-top:after {
+  left: 0;
+  height: 0;
+  width: 100%;
+}
+
+.from-top:before {
+  bottom: 0;
+  border: 1px solid var(--inv);
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.from-top:after {
+  top: 0;
+  height: 0;
+}
+
+.from-top:hover:before,
+.from-top:hover:after {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }

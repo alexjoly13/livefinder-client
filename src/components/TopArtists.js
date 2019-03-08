@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { getTopArtist } from "../api.js";
+import { getTopArtist, concertInfo } from "../api.js";
+
 import "./TopArtists.css";
+
 function getConcertAddress(concert) {
   return `/concert-info/${concert.id}`;
 }
@@ -16,17 +18,17 @@ class TopArtists extends Component {
   componentDidMount() {
     // console.log("it works");
     // const { topArtists } = this.state;
-    getTopArtist()
-      // get data from our EXPRESS API
-      .then(response => {
-        this.setState({ topArtists: response.data });
-        // console.log("user top artists: ", topArtists);
-        // console.log("user top artists: ", response.data);
-      });
+
+    getTopArtist().then(response => {
+      this.setState({ topArtists: response.data });
+      // console.log("user top artists: ", topArtists);
+      // console.log("user top artists: ", response.data);
+    });
   }
+
   render() {
     const { topArtists } = this.state;
-    console.log(topArtists);
+
     return (
       <section className="padding-top off-grid-section desktop-cards-section">
         <div className="desktop-card-heading">
@@ -35,6 +37,7 @@ class TopArtists extends Component {
           <p>Check out the next live from your favorite top artists list.</p>
           <hr className="small-hr" />
         </div>
+
         <div>
           {console.log("hello top artist", topArtists)}
           {topArtists.map(oneArtist => {

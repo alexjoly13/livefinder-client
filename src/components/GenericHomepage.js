@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { genericInfos } from "../api.js";
 import NextConcertsParis from "./GenericNextConcerts";
+import { Link } from "react-router-dom";
 
 import "./GenericHomepage.css";
 
@@ -36,8 +37,19 @@ class GenericInfosHome extends Component {
     return (
       <section className="GenericInfosHome">
         <header>
+          <nav>
+            <Link to="/">
+              <h1 className="btn-home">
+                <img
+                  src="https://image.flaticon.com/icons/svg/130/130882.svg"
+                  alt=""
+                />
+              </h1>
+            </Link>
+          </nav>
           <div>
             <span className="outline-text">GENERIC</span>
+            <hr className="small-hr" />
             <h1>
               Hello.
               <br /> You are not connected?
@@ -49,8 +61,8 @@ class GenericInfosHome extends Component {
             </p>
           </div>
         </header>
-        <h1>Top Artists in France</h1>
-        <span>\\\\\\\\\\\\\\</span>
+        <h3>Top Artists in France</h3>
+        <hr className="small-hr" />
         <p>Discover what french people like to listen right now</p>
         {franceTopArtists.map(oneArtist => {
           return (
