@@ -64,9 +64,11 @@ class Dashboard extends Component {
                     </Link>
                   </div>
                   <div>
-                    <p>Not attendind any more ? </p>
-                    <button onClick={() => this.handleSubmit(oneEvent)}>
-                      Click here
+                    <button
+                      className="btn-delete"
+                      onClick={() => this.handleSubmit(oneEvent)}
+                    >
+                      x
                     </button>
                   </div>
                 </div>

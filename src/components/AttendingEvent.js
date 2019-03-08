@@ -19,10 +19,7 @@ class AttendingEvent extends Component {
                 <div key={oneEvent.id} className="small-card">
                   <div className="small-card-text">
                     <div className="small-card-date">
-                      <p>
-                        {oneEvent.start.date.slice(5, 7)}/
-                        {oneEvent.start.date.slice(8)}{" "}
-                      </p>
+                      <p>{oneEvent.start.date}</p>
                       <p>{oneEvent.venue.displayName}</p>
                     </div>
                     <div>

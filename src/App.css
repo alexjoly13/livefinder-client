@@ -334,7 +334,8 @@ footer {
     margin: 15% 0 7%;
     display: flex;
     /* align-items: center; */
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .App .desktop-card-heading {
@@ -412,3 +413,15 @@ footer {
 .header-card {
   padding-bottom: 50px;
 } */
+
+.btn-delete {
+  text-decoration: none;
+  color: white;
+  background-color: tomato;
+  padding: 6px 10px;
+  border-radius: 20px;
+  border: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

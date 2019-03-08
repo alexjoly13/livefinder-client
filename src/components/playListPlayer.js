@@ -24,7 +24,8 @@ class PlayListPlayer extends Component {
     const { playListArray } = this.state;
     return (
       <section>
-        <h2>Your favourite Playlists</h2>
+        <h3>Your favourite Playlists</h3>
+        <p>See the playlist you have created here</p>
         <hr className="small-hr" />
         <ul>
           {playListArray.map(onePlaylist => {
@@ -33,7 +34,7 @@ class PlayListPlayer extends Component {
             }`;
             return (
               <div key={onePlaylist.id}>
-                <h4>{onePlaylist.name}</h4>
+                <h3>{onePlaylist.name}</h3>
                 <iframe
                   title={onePlaylist.name}
                   src={artistUrl}

@@ -127,11 +127,7 @@ class ConcertInfo extends Component {
             return (
               <div>
                 <p>
-                  <span className="concert-date">
-                    {oneEvent.start.date.slice(5, 7)}/
-                    {oneEvent.start.date.slice(8)} at{" "}
-                    {oneEvent.start.time.slice(0, 5)}
-                  </span>
+                  <span className="concert-date">{oneEvent.start.date}</span>
                 </p>
                 <p>
                   <span className="concert-place">
@@ -217,14 +213,8 @@ class ConcertInfo extends Component {
           {songkick.map(oneEvent => {
             return (
               <div key={oneEvent.id}>
-                <h1>{oneEvent.displayName}</h1>
-                <p>{oneEvent.type}</p>
                 <p>
-                  <span className="concert-date">
-                    {oneEvent.start.date.slice(5, 7)}/
-                    {oneEvent.start.date.slice(8)} at{" "}
-                    {oneEvent.start.time.slice(0, 5)}
-                  </span>
+                  <span className="concert-date">{oneEvent.start.date}</span>
                 </p>
                 <h1>{oneEvent.displayName}</h1>
                 <hr className="small-hr" />
