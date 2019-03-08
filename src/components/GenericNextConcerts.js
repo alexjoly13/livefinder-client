@@ -28,20 +28,24 @@ class NextConcertsParis extends Component {
     console.log(concertsParis);
     return (
       <section className="NextConcertsParis">
-        <h1>Next Concerts in Paris</h1>
+        <h3>Next Concerts in Paris</h3>
 
-        <span>\\\\\\\\\\\\\\</span>
+        <hr className="small-hr" />
         <p>See the upcomming event in Paris</p>
         <div className="column-card-flex">
           {concertsParis.map(oneConcert => {
             return (
               <div className="column-card">
                 <Link to={getConcertAddress(oneConcert)}>
+                  <p>
+                    <span>{oneConcert.type}</span>
+                    {/* <hr className="small-hr" /> */}
+                  </p>
                   <h3>{oneConcert.displayName}</h3>
-                  <hr className="small-hr" />
+                  <p>
+                    <span>{oneConcert.venue.displayName}</span>
+                  </p>
                 </Link>
-                <p>{oneConcert.type}</p>
-                <p>{oneConcert.venue.displayName}</p>
               </div>
             );
           })}

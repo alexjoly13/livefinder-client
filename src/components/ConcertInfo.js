@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { concertInfo } from "../api.js";
 import { addConcert } from "../api.js";
+import Nav from "./nav";
 
 import "./ConcertInfo.css";
 
@@ -64,6 +65,9 @@ class ConcertInfo extends Component {
         {lastfm.map(oneArtist => {
           return (
             <div key={oneArtist.name}>
+              <div>
+                <Nav />
+              </div>
               <img
                 className="bk-img"
                 src={this.oneImg(oneArtist.image[4])}
@@ -79,8 +83,7 @@ class ConcertInfo extends Component {
                     />
                   </div>
                   <h1>{oneArtist.name}</h1>
-
-                  <h3>Total listeners: {oneArtist.stats.listeners}</h3>
+                  <h4>Total listeners: {oneArtist.stats.listeners}</h4>
                 </div>
                 <hr className="small-hr" />
                 <h3>Similar Artists.</h3>
@@ -124,21 +127,30 @@ class ConcertInfo extends Component {
           {songkick.map(oneEvent => {
             return (
               <div>
+                <p>
+                  <span className="concert-date">
+                    {oneEvent.start.date.slice(5, 7)}/
+                    {oneEvent.start.date.slice(8)} at{" "}
+                    {oneEvent.start.time.slice(0, 5)}
+                  </span>
+                </p>
+                <p>
+                  <span className="concert-place">
+                    {oneEvent.venue.displayName}
+                  </span>
+                </p>
                 <h1>{oneEvent.displayName}</h1>
+                <hr className="small-hr" />
                 <p>{oneEvent.type}</p>
                 <p>
-                  {oneEvent.start.date}, {oneEvent.start.time}
-                </p>
-                <p>{oneEvent.venue.displayName}</p>
-                <p>{oneEvent.venue.street}</p>
-                <p>
-                  {oneEvent.location.city}, {oneEvent.venue.zip}
+                  {oneEvent.venue.street}, {oneEvent.location.city},{" "}
+                  {oneEvent.venue.zip}
                 </p>
               </div>
             );
           })}
           {/* a changer selon vos desirs mes seigneurs... */}
-          <h1>GREAT ! YOU ARE ATTENTING THIS CONCERT</h1>
+          <h2>Great! You are already attending this concert .</h2>
         </div>
       </section>
     ) : (
@@ -209,18 +221,28 @@ class ConcertInfo extends Component {
                 <h1>{oneEvent.displayName}</h1>
                 <p>{oneEvent.type}</p>
                 <p>
-                  {oneEvent.start.date}, {oneEvent.start.time}
+                  <span className="concert-date">
+                    {oneEvent.start.date.slice(5, 7)}/
+                    {oneEvent.start.date.slice(8)} at{" "}
+                    {oneEvent.start.time.slice(0, 5)}
+                  </span>
                 </p>
+                <h1>{oneEvent.displayName}</h1>
+                <hr className="small-hr" />
+                <p>{oneEvent.type}</p>
                 <p>{oneEvent.venue.displayName}</p>
-                <p>{oneEvent.venue.street}</p>
                 <p>
-                  {oneEvent.location.city}, {oneEvent.venue.zip}
+                  {oneEvent.venue.street},{oneEvent.location.city},{" "}
+                  {oneEvent.venue.zip}
                 </p>
               </div>
             );
           })}
 
-          <button onClick={event => this.handleSubmit(event)}>
+          <button
+            className="btn from-top"
+            onClick={event => this.handleSubmit(event)}
+          >
             <h3>ATTENDING</h3>
           </button>
         </div>

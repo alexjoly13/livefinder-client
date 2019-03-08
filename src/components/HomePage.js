@@ -11,29 +11,29 @@ class HomePage extends Component {
   render() {
     return (
       <section className="HomePage">
-        <div>
-          <h1>Live Me Up.</h1>
+        <div className="home-card">
+          <h1>Live Finder.</h1>
           <h2>Enjoy the full experience with Spotify</h2>
-          <span>\\\\\\\\\\\\\\</span>
+
+          <hr className="small-hr" />
           <p>
             To enjoy the full experience, we recommand you to sync your acount
             with spotify. You also can sync your spotify account to facebook to
             live the social experience and see who is up for a live!
           </p>
           <div>
-            <a href="http://localhost:8888/auth/spotify">
+            <a href={`${process.env.REACT_APP_BACKEND_URL}/auth/spotify`}>
               Connect with Spotify
             </a>
             <a href="#0">Connect with Deezer</a>
             <a href="#0">Connect with Apple Music </a>
           </div>
           <hr />
-          <small>Lorem ipsum nisi ut aliquip ex ea.</small>
         </div>
-        <div>
-          <h1>Live Me Alone</h1>
+        <div className="home-card">
+          <h1>Live Me Alone.</h1>
           <h2>Don't want the full experience ?</h2>
-          <span>\\\\\\\\\\\\\\</span>
+          <hr className="small-hr" />
           <p>
             Don't worrie, you can still enjoy the app and discover new bands and
             lives. And if you want to sync later on, you still can come back to

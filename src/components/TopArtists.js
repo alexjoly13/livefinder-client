@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { getTopArtist } from "../api.js";
+import { getTopArtist, concertInfo } from "../api.js";
+
 import "./TopArtists.css";
+
 function getConcertAddress(concert) {
   return `/concert-info/${concert.id}`;
 }
@@ -17,6 +19,7 @@ class TopArtists extends Component {
       this.setState({ topArtists: response.data });
     });
   }
+
   render() {
     const { topArtists } = this.state;
     return (
@@ -29,6 +32,7 @@ class TopArtists extends Component {
           </p>
           <hr className="small-hr" />
         </div>
+
         <div>
           {topArtists.map(oneArtist => {
             return (

@@ -20,8 +20,9 @@
       rgba(255, 127, 80, 0.8) 0%,
       rgba(255, 127, 80, 0.8) 50%
     ),
-    url("https://picsum.photos/500/500/?random");
+    url("https://images.unsplash.com/photo-1497911270199-1c552ee64aa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
   background-size: cover;
+  background-position: center center;
   background-attachment: fixed;
   padding: 5%;
   margin: 0 5%;
@@ -40,12 +41,13 @@
   padding: 10px 10px;
   margin: 3% 0;
   background-image: linear-gradient(
-      rgba(0, 40, 250, 0.4) 0%,
-      rgba(0, 40, 250, 0.4) 80%
+      rgba(0, 40, 250, 0.6) 0%,
+      rgba(0, 40, 250, 0.6) 80%
     ),
-    url("https://picsum.photos/500/300/?random");
+    url("https://images.unsplash.com/photo-1486546910464-ec8e45c4a137?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=702&q=80");
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-
+  background-position: center center;
+  background-size: cover;
   border-radius: 5px;
   /* display: flex;
   justify-content: center;

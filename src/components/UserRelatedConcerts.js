@@ -25,7 +25,6 @@ class UserRelatedConcerts extends Component {
 
   render() {
     const { artistConcerts } = this.state;
-    console.log(artistConcerts);
     return (
       <section className="">
         <h3>You may also like.</h3>

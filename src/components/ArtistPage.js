@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./GenericNextConcerts.css";
-import Axios from "axios";
 
 class ArtistDetails extends Component {
   constructor(props) {
