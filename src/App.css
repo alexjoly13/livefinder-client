@@ -96,6 +96,10 @@ footer {
   bottom: 10px;
 }
 
+.logo {
+  width: 150px;
+  padding-top: 5%;
+}
 /* SEPARATORS */
 
 .App hr {
@@ -382,7 +386,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 20px 24px;
   border-radius: 50px;
   background-color: white;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
@@ -390,7 +394,7 @@ footer {
 
 .App nav img {
   width: 25px;
-  height: 20px;
+  /* height: 20px; */
 }
 
 .btn-home {
@@ -404,3 +408,7 @@ footer {
   align-items: center;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
+/* 
+.header-card {
+  padding-bottom: 50px;
+} */

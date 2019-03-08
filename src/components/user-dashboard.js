@@ -18,7 +18,7 @@ class Dashboard extends Component {
     const { currentUser } = this.props;
     return (
       <section>
-        <header className="Header padding-top">
+        <header className="Header">
           <Nav />
           <div className="header-card">
             <div className="header-text">

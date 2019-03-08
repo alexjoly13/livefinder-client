@@ -9,7 +9,7 @@ class Nav extends Component {
         <div>
           <NavLink to="/connected">
             <img
-              src="https://image.flaticon.com/icons/svg/149/149852.svg"
+              src="https://image.flaticon.com/icons/svg/1378/1378756.svg"
               alt="lol"
             />
           </NavLink>

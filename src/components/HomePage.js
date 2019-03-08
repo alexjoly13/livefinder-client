@@ -12,6 +12,7 @@ class HomePage extends Component {
     return (
       <section className="HomePage">
         <div className="home-card">
+          <img className="logo" src="images/logo.png" alt="logo" />
           <h1>Live Finder.</h1>
           <h2>Enjoy the full experience with Spotify</h2>
 
