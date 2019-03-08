@@ -39,7 +39,6 @@ class Connected extends Component {
   logoutClick() {
     getLogOut().then(response => {
       console.log("LOGGED OUT");
-      console.log(this.state.currentUser);
 
       this.props.loggedIn(null);
     });

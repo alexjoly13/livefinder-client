@@ -22,7 +22,6 @@ class PlayListPlayer extends Component {
 
   render() {
     const { playListArray } = this.state;
-    console.log(playListArray);
     return (
       <section>
         <h2>Your favourite Playlists</h2>

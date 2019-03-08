@@ -25,7 +25,6 @@ class NextConcertsParis extends Component {
 
   render() {
     const { concertsParis } = this.state;
-    console.log(concertsParis);
     return (
       <section className="NextConcertsParis">
         <h3>Next Concerts in Paris</h3>
