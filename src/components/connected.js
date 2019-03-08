@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import TopArtistsLive from "./TopArtists";
 import { getLogOut, postTokenLogin } from "../api.js";
 
+import { fadeInDown } from "react-animations";
+import Radium, { StyleRoot } from "radium";
+
 import "./connected.css";
 
 import UserRelatedConcerts from "./UserRelatedConcerts";
@@ -43,6 +46,13 @@ class Connected extends Component {
   }
 
   render() {
+    const styles = {
+      fadeInDown: {
+        animation: "x 1.5s",
+        animationName: Radium.keyframes(fadeInDown, "fadeInDown")
+      }
+    };
+
     const { currentUser } = this.props;
 
     if (!this.props.currentUser) {
@@ -50,39 +60,44 @@ class Connected extends Component {
     }
     return (
       <section className="Connected">
-        <header className="Header">
-          <Nav />
-          <div className="header-card">
-            <div className="header-text">
-              <div className="img-flex">
-                <img className="profilPic" src={currentUser.image} alt="" />
+        <StyleRoot>
+          <header className="Header">
+            <Nav style={styles.fadeInDown} />
+            <div className="header-card" style={styles.fadeInDown}>
+              <div className="header-text">
+                <div className="img-flex">
+                  <img
+                    className="profilPic"
+                    src={this.props.currentUser.image}
+                    alt=""
+                  />
+                </div>
+                <h1>Hi {this.props.currentUser.fullName}</h1>
+                <hr />
+                <h2>Kean for new concerts?</h2>
+                <p>
+                  Check out the next live bands arround, any trending concerts
+                  arround any more.
+                </p>
+                <small>
+                  <NavLink to="/">
+                    <button
+                      className="outline-text-black"
+                      onClick={() => this.logoutClick()}
+                    >
+                      Log Out
+                    </button>
+                  </NavLink>
+                </small>
               </div>
-
-              <h1>Hi {currentUser.fullName}</h1>
-              <hr />
-              <h2>Looking for new concerts?</h2>
-              <p>
-                Check out the next live bands around you, trending concerts and
-                many more.
-              </p>
-              <small>
-                <NavLink to="/">
-                  <button
-                    className="outline-text-black"
-                    onClick={() => this.logoutClick()}
-                  >
-                    Log Out
-                  </button>
-                </NavLink>
-              </small>
             </div>
-          </div>
-        </header>
+          </header>
+        </StyleRoot>
 
-        <TopArtistsLive {...this.props} />
-        <AttendingEvent {...this.props} />
-        <UserRelatedConcerts {...this.props} />
-        <TopFrenchPage {...this.props} />
+        <TopArtistsLive {...this.props} style={styles.fadeInDown} />
+        <AttendingEvent {...this.props} style={styles.fadeInDown} />
+        <UserRelatedConcerts {...this.props} style={styles.fadeInDown} />
+        <TopFrenchPage {...this.props} style={styles.fadeInDown} />
       </section>
     );
   }

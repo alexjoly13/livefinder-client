@@ -47,16 +47,18 @@ class TopFrenchPage extends Component {
                   {oneArtist.resultsPage.results.event.map(oneEvent => {
                     return (
                       <div key={oneEvent.displayName}>
-                        <div className="inline-card">
+                        <div className="inline-card-v2">
                           <span className="outline-text">{oneEvent.type}</span>
                           <span className="card-btn">{/* <Link to />+ */}</span>
 
                           <div className="card-text">
-                            <Link to={getConcertAddress(oneEvent)}>
-                              <h4>{oneEvent.venue.displayName}</h4>
-                              <hr />
-                              <h3>{oneEvent.displayName}</h3>
-                            </Link>
+                            <div className="inline-card-v2-text">
+                              <Link to={getConcertAddress(oneEvent)}>
+                                <h4>{oneEvent.venue.displayName}</h4>
+                                <hr />
+                                <h3>{oneEvent.displayName}</h3>
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </div>
