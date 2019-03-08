@@ -153,6 +153,9 @@ class ConcertInfo extends Component {
         {lastfm.map(oneArtist => {
           return (
             <div key={oneArtist.mbid}>
+              <div>
+                <Nav />
+              </div>
               <img
                 className="bk-img"
                 src={this.oneImg(oneArtist.image[4])}
