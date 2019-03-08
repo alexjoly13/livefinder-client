@@ -12,6 +12,7 @@ import TestPage from "./components/Test";
 import Dashboard from "./components/user-dashboard";
 import SpotiPlayer from "./components/SpotiPlayer.js";
 import AttendingEvent from "./components/AttendingEvent";
+import PlayListPlayer from "./components/playListPlayer";
 
 class App extends Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class App extends Component {
 
   render() {
     const { currentUser } = this.state;
+    console.log("Hello " + currentUser.fullName);
     return (
       <section className="App">
         <div className="body">
@@ -68,6 +70,7 @@ class App extends Component {
               )}
             />
             <Route path="/spotiPlayer" component={SpotiPlayer} />
+            <Route path="/playListPlayer" component={PlayListPlayer} />
             <Route path="/generic" component={GenericInfosHome} />
             <Route path="/test" component={TestPage} />
             <Route

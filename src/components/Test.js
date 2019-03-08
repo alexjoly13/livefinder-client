@@ -12,25 +12,16 @@ class TestPage extends Component {
   }
 
   componentDidMount() {
-    getTest()
-      // get data from our EXPRESS API
-      .then(response => {
-        // console.log(response.data[1].artist);
-        const lastfmData = this.state.lastfm;
-        const songkickData = this.state.songkick;
-        lastfmData.push(response.data);
-        // songkickData.push(response.data[0].resultsPage.results);
-        this.setState({
-          songkick: songkickData,
-          lastfm: lastfmData
-        });
+    getTest().then(response => {
+      const lastfmData = this.state.lastfm;
+      const songkickData = this.state.songkick;
+      lastfmData.push(response.data);
+      this.setState({
+        songkick: songkickData,
+        lastfm: lastfmData
       });
+    });
   }
-
-  // componentDidMount() {
-  //   // call function to link with backed
-  //   this.setState({ artistTest: this.props });
-  // }
 
   oneImg(el) {
     // console.log(el);

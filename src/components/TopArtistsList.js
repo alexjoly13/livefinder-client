@@ -11,14 +11,10 @@ class TopArtistsList extends Component {
   }
 
   componentDidMount() {
-    // console.log("it works");
     const { topArtistsList } = this.state;
-    getTopArtistsList()
-      // get data from our EXPRESS API
-      .then(response => {
-        this.setState({ topArtistsList: response.data });
-        console.log("user top artists: ", topArtistsList);
-      });
+    getTopArtistsList().then(response => {
+      this.setState({ topArtistsList: response.data });
+    });
   }
 
   render() {

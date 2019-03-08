@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { concertInfo } from "../api.js";
 import { addConcert } from "../api.js";
-import { Redirect } from "react-router-dom";
 
 import "./ConcertInfo.css";
 
@@ -15,9 +14,22 @@ class ConcertInfo extends Component {
     };
   }
 
+  checkingIfAttending(currentUser) {
+    const eventId = this.props.match.params.concertId;
+    const currentUserConcert = this.props.currentUser.concert;
+    const userConcertArray = [];
+    currentUserConcert.forEach(oneId => {
+      userConcertArray.push(oneId.id);
+    });
+    const compare = function(element) {
+      return element - eventId === 0;
+    };
+    return userConcertArray.some(compare);
+  }
+
   componentDidMount() {
-    console.log(this.props);
     const { params } = this.props.match;
+
     concertInfo(params.concertId).then(response => {
       const lastfmData = this.state.lastfm;
       const songkickData = this.state.songkick;
@@ -26,7 +38,6 @@ class ConcertInfo extends Component {
       this.setState({
         songkick: songkickData,
         lastfm: lastfmData
-        // artistName: response.data.results.event.performance[0].displayName
       });
     });
   }
@@ -41,18 +52,95 @@ class ConcertInfo extends Component {
   }
 
   oneImg(el) {
-    // console.log(el);
-
     return Object.values(el);
   }
 
   render() {
     const { isSubmitSuccessful, lastfm, songkick } = this.state;
-    console.log("LASTFM", lastfm);
-    console.log("SONGKICK", songkick);
     console.log(isSubmitSuccessful);
-    return this.state.isSubmitSuccessful ? (
-      <Redirect to="/connected" />
+    const { currentUser } = this.props;
+    return this.checkingIfAttending(currentUser) ? (
+      <section className="ConcertInfo">
+        {lastfm.map(oneArtist => {
+          return (
+            <div>
+              <img
+                className="bk-img"
+                src={this.oneImg(oneArtist.image[4])}
+                alt="artist picto"
+              />
+              <div key={oneArtist.mbid}>
+                <div className="artist-header">
+                  <div className="artist-card">
+                    <img
+                      className=""
+                      src={this.oneImg(oneArtist.image[4])}
+                      alt="artist picto"
+                    />
+                  </div>
+                  <h1>{oneArtist.name}</h1>
+
+                  <h3>Total listeners: {oneArtist.stats.listeners}</h3>
+                </div>
+                <hr className="small-hr" />
+                <h3>Similar Artists.</h3>
+                <div className="inline-small-carousel">
+                  {oneArtist.similar.artist.map(oneSimilarArtist => {
+                    return (
+                      <div
+                        className="inline-small-card"
+                        key={oneSimilarArtist.url}
+                      >
+                        <h4>{oneSimilarArtist.name}</h4>
+                        <img
+                          src={this.oneImg(oneSimilarArtist.image[2])}
+                          alt="artist picto"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+                <hr className="small-hr" />
+                <h3>Genre.</h3>
+                <div className="genre-sec">
+                  {oneArtist.tags.tag.map(oneGenre => {
+                    return (
+                      <div key={oneGenre.url}>
+                        <h5>{oneGenre.name}</h5>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="summary">
+                  <hr className="small-hr" />
+                  <h3>Bio.</h3>
+                  <p>{oneArtist.bio.summary}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+        <div className="concert-card">
+          {songkick.map(oneEvent => {
+            return (
+              <div>
+                <h1>{oneEvent.displayName}</h1>
+                <p>{oneEvent.type}</p>
+                <p>
+                  {oneEvent.start.date}, {oneEvent.start.time}
+                </p>
+                <p>{oneEvent.venue.displayName}</p>
+                <p>{oneEvent.venue.street}</p>
+                <p>
+                  {oneEvent.location.city}, {oneEvent.venue.zip}
+                </p>
+              </div>
+            );
+          })}
+          {/* a changer selon vos desirs mes seigneurs... */}
+          <h1>GREAT ! YOU ARE ATTENTING THIS CONCERT</h1>
+        </div>
+      </section>
     ) : (
       <section className="ConcertInfo">
         {lastfm.map(oneArtist => {
@@ -136,21 +224,6 @@ class ConcertInfo extends Component {
             <h3>ATTENDING</h3>
           </button>
         </div>
-        {/* <header className="Header">
-          <h1>Next live for {songkick[0].displayName}</h1>
-          <span>\\\\\\\\\\\\\\</span>
-          <p>{concert.displayName}</p>
-        </header> */}
-        {/* <div className="inline-small-carousel">
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-          <div className="inline-small-card" />
-        </div> */}
       </section>
     );
   }

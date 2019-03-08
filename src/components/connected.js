@@ -29,7 +29,7 @@ class Connected extends Component {
       axios
         .post("http://localhost:8888/auth/token-login", match.params)
         .then(response => {
-          console.log("Logged-In", response.data);
+          console.log("Logged-In");
           history.replace("/connected");
           this.props.loggedIn(response.data);
         })
@@ -48,8 +48,6 @@ class Connected extends Component {
 
   render() {
     const { currentUser } = this.props;
-    // const { topArtist } = this.state;
-    console.log("loooooooooool :", currentUser);
 
     if (!this.props.currentUser) {
       return <p>Loading...</p>;
@@ -61,14 +59,10 @@ class Connected extends Component {
           <div className="header-card">
             <div className="header-text">
               <div className="img-flex">
-                <img
-                  className="profilPic"
-                  src={this.props.currentUser.image}
-                  alt=""
-                />
+                <img className="profilPic" src={currentUser.image} alt="" />
               </div>
 
-              <h1>Hi {this.props.currentUser.fullName}</h1>
+              <h1>Hi {currentUser.fullName}</h1>
               <hr />
               <h2>Looking for new concerts?</h2>
               <p>

@@ -38,6 +38,7 @@ class SpotiPlayer extends Component {
               <div key={oneArtist.id}>
                 <h4>{oneArtist.name}</h4>
                 <iframe
+                  title={oneArtist.name}
                   src={artistUrl}
                   width="300"
                   height="80"
