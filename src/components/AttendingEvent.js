@@ -6,7 +6,6 @@ function getConcertAddress(concert) {
 class AttendingEvent extends Component {
   render() {
     const { currentUser } = this.props;
-    console.log(currentUser);
     return (
       <section className="AttendingEvent">
         <div className="AttendingEvent-text">
@@ -17,7 +16,7 @@ class AttendingEvent extends Component {
           <div className="flex-small-cards">
             {currentUser.concert.map(oneEvent => {
               return (
-                <div className="small-card">
+                <div key={oneEvent.id} className="small-card">
                   <div className="small-card-text">
                     <div className="small-card-date">
                       <p>

@@ -12,13 +12,10 @@ class ArtistDetails extends Component {
   }
 
   componentDidMount() {
-    // call function to link with backed
     this.setState({ artistTest: this.props });
   }
   render() {
     const { artistTest } = this.state;
-    console.log(artistTest);
-
     return <h1 value={artistTest.artistName}>{artistTest.artistName}</h1>;
   }
 }

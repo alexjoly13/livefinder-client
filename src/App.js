@@ -38,6 +38,7 @@ class App extends Component {
 
   render() {
     const { currentUser } = this.state;
+    console.log("Hello " + currentUser.fullName);
     return (
       <section className="App">
         <div className="body">
