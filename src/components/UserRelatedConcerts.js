@@ -16,26 +16,15 @@ class UserRelatedConcerts extends Component {
   }
 
   componentDidMount() {
-<<<<<<< HEAD
-    getRelatedConcerts()
-      // get data from our EXPRESS API
-      .then(response => {
-        // console.log("yoloooooooooooooooooooo", response.data);
-        this.setState({
-          artistConcerts: response.data
-        });
-=======
     getRelatedConcerts().then(response => {
       this.setState({
         artistConcerts: response.data
->>>>>>> 5b5da302363a5a2b373a4c1bfc6e3f43c5566332
       });
     });
   }
 
   render() {
     const { artistConcerts } = this.state;
-    console.log(artistConcerts);
     return (
       <section className="">
         <h3>You may also like.</h3>

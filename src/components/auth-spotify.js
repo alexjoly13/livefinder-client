@@ -9,7 +9,7 @@ class HomePage extends Component {
   render() {
     return (
       <section>
-        <a href="http://localhost:8888/auth/spotify">
+        <a href={`${process.env.REACT_APP_BACKEND_URL}/auth/spotify`}>
           <img
             className="logo-spotify"
             src="/images/spotify-button.png"

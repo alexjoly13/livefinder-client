@@ -21,7 +21,7 @@ class HomePage extends Component {
             live the social experience and see who is up for a live!
           </p>
           <div>
-            <a href="http://localhost:8888/auth/spotify">
+            <a href={`${process.env.REACT_APP_BACKEND_URL}/auth/spotify`}>
               Connect with Spotify
             </a>
             <a href="#0">Connect with Deezer</a>
