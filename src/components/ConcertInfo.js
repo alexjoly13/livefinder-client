@@ -58,7 +58,6 @@ class ConcertInfo extends Component {
 
   render() {
     const { isSubmitSuccessful, lastfm, songkick } = this.state;
-    console.log(songkick);
     const { currentUser } = this.props;
     return this.checkingIfAttending(currentUser) ? (
       <section className="ConcertInfo">
