@@ -29,7 +29,10 @@ class TopFrenchPage extends Component {
         <div className="desktop-card-heading flex-item1">
           <h3>Trending lives around you.</h3>
 
-          <p>Discover which bands are trenging right now around you.</p>
+          <p>
+            Discover concerts from bands that are trending around you (updated
+            every Fridays).
+          </p>
           <hr className="small-hr" />
         </div>
         <div className="flex-item2">

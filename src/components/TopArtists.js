@@ -27,7 +27,9 @@ class TopArtists extends Component {
         <div className="desktop-card-heading">
           <h3>Your next recommended concerts.</h3>
 
-          <p>Check out the next live from your favorite top artists list.</p>
+          <p>
+            Check out the next concerts from the artists you most listened to.
+          </p>
           <hr className="small-hr" />
         </div>
 

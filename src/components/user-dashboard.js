@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { deleteConcert } from "../api.js";
 import SpotiPlayer from "./SpotiPlayer.js";
 import Nav from "./nav.js";
+import PlayListPlayer from "./playListPlayer.js";
 function getConcertAddress(concert) {
   return `/concert-info/${concert.id}`;
 }
@@ -62,12 +63,21 @@ class Dashboard extends Component {
                       <h3>{oneEvent.performance[0].displayName}</h3>
                     </Link>
                   </div>
+                  <div>
+                    <p>Not attendind any more ? </p>
+                    <button onClick={() => this.handleSubmit(oneEvent)}>
+                      Click here
+                    </button>
+                  </div>
                 </div>
               );
             })}
           </div>
           <div>
             <SpotiPlayer {...this.props} />
+          </div>
+          <div>
+            <PlayListPlayer />
           </div>
         </div>
       </section>

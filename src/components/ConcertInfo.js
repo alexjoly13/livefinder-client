@@ -58,13 +58,13 @@ class ConcertInfo extends Component {
 
   render() {
     const { isSubmitSuccessful, lastfm, songkick } = this.state;
-    console.log(isSubmitSuccessful);
+    console.log(songkick);
     const { currentUser } = this.props;
     return this.checkingIfAttending(currentUser) ? (
       <section className="ConcertInfo">
         {lastfm.map(oneArtist => {
           return (
-            <div>
+            <div key={oneArtist.name}>
               <div>
                 <Nav />
               </div>
@@ -73,7 +73,7 @@ class ConcertInfo extends Component {
                 src={this.oneImg(oneArtist.image[4])}
                 alt="artist picto"
               />
-              <div key={oneArtist.mbid}>
+              <div>
                 <div className="artist-header">
                   <div className="artist-card">
                     <img
@@ -157,13 +157,13 @@ class ConcertInfo extends Component {
       <section className="ConcertInfo">
         {lastfm.map(oneArtist => {
           return (
-            <div>
+            <div key={oneArtist.mbid}>
               <img
                 className="bk-img"
                 src={this.oneImg(oneArtist.image[4])}
                 alt="artist picto"
               />
-              <div key={oneArtist.mbid}>
+              <div>
                 <div className="artist-header">
                   <div className="artist-card">
                     <img
@@ -217,7 +217,9 @@ class ConcertInfo extends Component {
         <div className="concert-card">
           {songkick.map(oneEvent => {
             return (
-              <div>
+              <div key={oneEvent.id}>
+                <h1>{oneEvent.displayName}</h1>
+                <p>{oneEvent.type}</p>
                 <p>
                   <span className="concert-date">
                     {oneEvent.start.date.slice(5, 7)}/

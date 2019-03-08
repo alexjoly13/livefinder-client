@@ -37,7 +37,7 @@ class UserRelatedConcerts extends Component {
             return (
               <div
                 className="inline-carousel"
-                key={oneArtist.resultsPage.results.event[0].id}
+                key={oneArtist.resultsPage.results.event[0].displayName}
               >
                 <div className="inline-carousel">
                   {oneArtist.resultsPage.results.event.map(oneEvent => {
