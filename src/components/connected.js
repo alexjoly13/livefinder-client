@@ -70,10 +70,10 @@ class Connected extends Component {
 
               <h1>Hi {this.props.currentUser.fullName}</h1>
               <hr />
-              <h2>Kean for new concerts?</h2>
+              <h2>Looking for new concerts?</h2>
               <p>
-                Check out the next live bands arround, any trending concerts
-                arround any more.
+                Check out the next live bands around you, trending concerts and
+                many more.
               </p>
               <small>
                 <NavLink to="/">
