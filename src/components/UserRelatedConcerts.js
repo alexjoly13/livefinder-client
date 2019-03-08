@@ -16,19 +16,15 @@ class UserRelatedConcerts extends Component {
   }
 
   componentDidMount() {
-    getRelatedConcerts()
-      // get data from our EXPRESS API
-      .then(response => {
-        console.log("yoloooooooooooooooooooo", response.data);
-        this.setState({
-          artistConcerts: response.data
-        });
+    getRelatedConcerts().then(response => {
+      this.setState({
+        artistConcerts: response.data
       });
+    });
   }
 
   render() {
     const { artistConcerts } = this.state;
-
     return (
       <section className="">
         <h3>You may also like.</h3>
@@ -39,12 +35,14 @@ class UserRelatedConcerts extends Component {
         <div>
           {artistConcerts.map(oneArtist => {
             return (
-              <div className="inline-carousel">
+              <div
+                className="inline-carousel"
+                key={oneArtist.resultsPage.results.event[0].id}
+              >
                 <div className="inline-carousel">
                   {oneArtist.resultsPage.results.event.map(oneEvent => {
-                    // console.log("hello aaaaaaaaaaaaaaaaa", oneEvent);
                     return (
-                      <div className="inline-thin-card">
+                      <div key={oneEvent.id} className="inline-thin-card">
                         <div className="card-thin-img">
                           <p className="date-day">
                             {oneEvent.start.date.slice(5, 7)}

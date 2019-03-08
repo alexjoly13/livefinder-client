@@ -14,26 +14,19 @@ class GenericInfosHome extends Component {
   }
 
   componentDidMount() {
-    genericInfos()
-      // get data from our EXPRESS API
-      .then(response => {
-        // console.log(response.data);
-        this.setState({
-          franceTopArtists: response.data.artist
-        });
+    genericInfos().then(response => {
+      this.setState({
+        franceTopArtists: response.data.artist
       });
+    });
   }
 
   oneImg(el) {
-    // console.log(el);
-
     return Object.values(el);
   }
 
   render() {
     const { franceTopArtists } = this.state;
-    console.log("aaaaaaaaaaaaaaa----------", franceTopArtists);
-    // console.log(franceTopArtists);
     return (
       <section className="GenericInfosHome">
         <header>

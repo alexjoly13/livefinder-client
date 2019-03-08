@@ -15,6 +15,10 @@ function errorHandler(err) {
   throw err;
 }
 
+export function postTokenLogin(tokenObject) {
+  return backendApi.post("/auth/token-login", tokenObject).catch(errorHandler);
+}
+
 export function getLogOut() {
   return backendApi.get("/logout").catch(errorHandler);
 }
@@ -40,7 +44,6 @@ export function concertInfo(concertId) {
 }
 
 export function addConcert(concertId) {
-  console.log(concertId);
   return backendApi.post(`/concert-info/${concertId}`).catch(errorHandler);
 }
 

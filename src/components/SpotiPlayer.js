@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import "./spotiPlayer.css";
 import { spotiPlayer } from "../api.js";
 
 function sliceToArray(array) {
-  const randomNumber = Math.floor(Math.random() * 16) + 1;
-  const secondNumber = randomNumber + 3;
+  const randomNumber = Math.floor(Math.random() * 14) + 1;
+  const secondNumber = randomNumber + 5;
   return array.slice(randomNumber, secondNumber);
 }
 
@@ -25,7 +26,7 @@ class SpotiPlayer extends Component {
     const { relatedArtists } = this.state;
     const spotArray = sliceToArray(relatedArtists);
     return (
-      <section>
+      <section className="spotiPlayer">
         <h3>Discover some Artists with us</h3>
         <p>Check the Random Players to discover or remember new artists</p>
         <hr className="small-hr" />
@@ -34,10 +35,14 @@ class SpotiPlayer extends Component {
             const artistUrl = `https://open.spotify.com/embed/artist/${
               oneArtist.id
             }`;
+            const followUrl = `https://open.spotify.com/follow/1/?uri=spotify:artist:${
+              oneArtist.id
+            }&size=basic&theme=light`;
             return (
               <div key={oneArtist.id}>
-                <h4>{oneArtist.name}</h4>
+                <h3>{oneArtist.name}</h3>
                 <iframe
+                  title={oneArtist.name}
                   src={artistUrl}
                   width="300"
                   height="80"
@@ -45,6 +50,17 @@ class SpotiPlayer extends Component {
                   allowtransparency="true"
                   allow="encrypted-media"
                 />
+                <div>
+                  <iframe
+                    title={oneArtist.name}
+                    src={followUrl}
+                    width="300"
+                    height="56"
+                    scrolling="no"
+                    frameborder="0"
+                    allowtransparency="true"
+                  />
+                </div>
               </div>
             );
           })}

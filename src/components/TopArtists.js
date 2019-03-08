@@ -7,7 +7,6 @@ import "./TopArtists.css";
 function getConcertAddress(concert) {
   return `/concert-info/${concert.id}`;
 }
-// import axios from "axios";
 class TopArtists extends Component {
   constructor(props) {
     super(props);
@@ -16,19 +15,13 @@ class TopArtists extends Component {
     };
   }
   componentDidMount() {
-    // console.log("it works");
-    // const { topArtists } = this.state;
-
     getTopArtist().then(response => {
       this.setState({ topArtists: response.data });
-      // console.log("user top artists: ", topArtists);
-      // console.log("user top artists: ", response.data);
     });
   }
 
   render() {
     const { topArtists } = this.state;
-
     return (
       <section className="padding-top off-grid-section desktop-cards-section">
         <div className="desktop-card-heading">
@@ -39,7 +32,6 @@ class TopArtists extends Component {
         </div>
 
         <div>
-          {console.log("hello top artist", topArtists)}
           {topArtists.map(oneArtist => {
             return (
               <div

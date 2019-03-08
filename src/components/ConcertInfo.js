@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { concertInfo, userDashboard } from "../api.js";
+import { concertInfo } from "../api.js";
 import { addConcert } from "../api.js";
-import { Redirect } from "react-router-dom";
 import Nav from "./nav";
 
 import "./ConcertInfo.css";
@@ -54,13 +53,12 @@ class ConcertInfo extends Component {
   }
 
   oneImg(el) {
-    // console.log(el);
-
     return Object.values(el);
   }
 
   render() {
     const { isSubmitSuccessful, lastfm, songkick } = this.state;
+    console.log(isSubmitSuccessful);
     const { currentUser } = this.props;
     return this.checkingIfAttending(currentUser) ? (
       <section className="ConcertInfo">

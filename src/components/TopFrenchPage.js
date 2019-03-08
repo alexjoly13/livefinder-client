@@ -16,14 +16,11 @@ class TopFrenchPage extends Component {
   }
 
   componentDidMount() {
-    getTopFrench()
-      // get data from our EXPRESS API
-      .then(response => {
-        console.log("French top artists: ", response.data);
-        this.setState({
-          topFrenchArtists: response.data
-        });
+    getTopFrench().then(response => {
+      this.setState({
+        topFrenchArtists: response.data
       });
+    });
   }
   render() {
     const { topFrenchArtists } = this.state;
@@ -38,7 +35,7 @@ class TopFrenchPage extends Component {
         <div className="flex-item2">
           {topFrenchArtists.map(oneArtist => {
             return (
-              <div>
+              <div key={oneArtist.resultsPage.results.event[0].id}>
                 <hr />
                 <h3>
                   {

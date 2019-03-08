@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import axios from "axios";
 import TopArtistsLive from "./TopArtists";
-import { getLogOut } from "../api.js";
+import { getLogOut, postTokenLogin } from "../api.js";
 
 import { fadeInDown } from "react-animations";
 import Radium, { StyleRoot } from "radium";
@@ -29,14 +28,11 @@ class Connected extends Component {
     const { match, history } = this.props;
 
     if (match.params.loginToken) {
-      axios
-        .post("http://localhost:8888/auth/token-login", match.params)
-        .then(response => {
-          console.log("Logged-In", response.data);
-          history.replace("/connected");
-          this.props.loggedIn(response.data);
-        })
-        .catch(err => alert("poop"));
+      postTokenLogin(match.params).then(response => {
+        console.log("Logged-In");
+        history.replace("/connected");
+        this.props.loggedIn(response.data);
+      });
     }
   }
 
@@ -58,8 +54,6 @@ class Connected extends Component {
     };
 
     const { currentUser } = this.props;
-    // const { topArtist } = this.state;
-    console.log("loooooooooool :", currentUser);
 
     if (!this.props.currentUser) {
       return <p>Loading...</p>;

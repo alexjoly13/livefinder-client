@@ -16,14 +16,11 @@ class NextConcertsParis extends Component {
   }
 
   componentDidMount() {
-    nextConcertsParis()
-      // get data from our EXPRESS API
-      .then(response => {
-        // console.log(response.data);
-        this.setState({
-          concertsParis: response.data
-        });
+    nextConcertsParis().then(response => {
+      this.setState({
+        concertsParis: response.data
       });
+    });
   }
 
   render() {
