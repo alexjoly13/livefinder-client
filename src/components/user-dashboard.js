@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { deleteConcert } from "../api.js";
 import SpotiPlayer from "./SpotiPlayer.js";
 import Nav from "./nav.js";
+import PlayListPlayer from "./playListPlayer.js";
 function getConcertAddress(concert) {
   return `/concert-info/${concert.id}`;
 }
@@ -68,6 +69,9 @@ class Dashboard extends Component {
           </div>
           <div>
             <SpotiPlayer {...this.props} />
+          </div>
+          <div>
+            <PlayListPlayer />
           </div>
         </div>
       </section>

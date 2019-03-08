@@ -16,19 +16,9 @@ class UserRelatedConcerts extends Component {
   }
 
   componentDidMount() {
-<<<<<<< HEAD
-    getRelatedConcerts()
-      // get data from our EXPRESS API
-      .then(response => {
-        // console.log("yoloooooooooooooooooooo", response.data);
-        this.setState({
-          artistConcerts: response.data
-        });
-=======
     getRelatedConcerts().then(response => {
       this.setState({
         artistConcerts: response.data
->>>>>>> 5b5da302363a5a2b373a4c1bfc6e3f43c5566332
       });
     });
   }
@@ -48,7 +38,7 @@ class UserRelatedConcerts extends Component {
             return (
               <div
                 className="inline-carousel"
-                key={oneArtist.resultsPage.results.event[0].id}
+                key={oneArtist.resultsPage.results.event[0].displayName}
               >
                 <div className="inline-carousel">
                   {oneArtist.resultsPage.results.event.map(oneEvent => {
