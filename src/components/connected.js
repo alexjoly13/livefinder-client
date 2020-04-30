@@ -20,7 +20,7 @@ class Connected extends Component {
       topArtists: [],
       topArtistName: [],
       concertArray: [],
-      currentUser: { concert: [] }
+      currentUser: { concert: [] },
     };
   }
 
@@ -28,7 +28,7 @@ class Connected extends Component {
     const { match, history } = this.props;
 
     if (match.params.loginToken) {
-      postTokenLogin(match.params).then(response => {
+      postTokenLogin(match.params).then((response) => {
         console.log("Logged-In");
         history.replace("/connected");
         this.props.loggedIn(response.data);
@@ -37,7 +37,7 @@ class Connected extends Component {
   }
 
   logoutClick() {
-    getLogOut().then(response => {
+    getLogOut().then((response) => {
       console.log("LOGGED OUT");
 
       this.props.loggedIn(null);
@@ -48,11 +48,13 @@ class Connected extends Component {
     const styles = {
       fadeInDown: {
         animation: "x 1.5s",
-        animationName: Radium.keyframes(fadeInDown, "fadeInDown")
-      }
+        animationName: Radium.keyframes(fadeInDown, "fadeInDown"),
+      },
     };
 
     const { currentUser } = this.props;
+
+    console.log(currentUser);
 
     if (!this.props.currentUser) {
       return <p>Loading...</p>;
