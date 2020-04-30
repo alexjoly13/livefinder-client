@@ -14,24 +14,28 @@ class AttendingEvent extends Component {
           <p>Here are your next live events planned.</p>
           <hr className="small-hr" />
           <div className="flex-small-cards">
-            {currentUser.concert.map(oneEvent => {
-              return (
-                <div key={oneEvent.id} className="small-card">
-                  <div className="small-card-text">
-                    <div className="small-card-date">
-                      <p>{oneEvent.start.date}</p>
-                      <p>{oneEvent.venue.displayName}</p>
-                    </div>
-                    <div>
-                      {/* <hr className="" /> */}
-                      <Link to={getConcertAddress(oneEvent)}>
-                        <h3>{oneEvent.performance[0].displayName}</h3>
-                      </Link>
+            {currentUser.concert.length > 0 ? (
+              currentUser.concert.map((oneEvent) => {
+                return (
+                  <div key={oneEvent.id} className="small-card">
+                    <div className="small-card-text">
+                      <div className="small-card-date">
+                        <p>{oneEvent.start.date}</p>
+                        <p>{oneEvent.venue.displayName}</p>
+                      </div>
+                      <div>
+                        {/* <hr className="" /> */}
+                        <Link to={getConcertAddress(oneEvent)}>
+                          <h3>{oneEvent.performance[0].displayName}</h3>
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })
+            ) : (
+              <div></div>
+            )}
           </div>
         </div>
       </section>

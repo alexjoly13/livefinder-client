@@ -29,7 +29,6 @@ class Connected extends Component {
 
     if (match.params.loginToken) {
       postTokenLogin(match.params).then((response) => {
-        console.log("Logged-In");
         history.replace("/connected");
         this.props.loggedIn(response.data);
       });
@@ -38,8 +37,6 @@ class Connected extends Component {
 
   logoutClick() {
     getLogOut().then((response) => {
-      console.log("LOGGED OUT");
-
       this.props.loggedIn(null);
     });
   }
@@ -53,8 +50,6 @@ class Connected extends Component {
     };
 
     const { currentUser } = this.props;
-
-    console.log(currentUser);
 
     if (!this.props.currentUser) {
       return <p>Loading...</p>;
